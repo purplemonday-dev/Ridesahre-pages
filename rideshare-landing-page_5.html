@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Free Legal Evaluation — Rideshare Assault Claims</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#0f172a;--ink-90:#1e293b;--ink-70:#334155;--ink-50:#64748b;--ink-30:#94a3b8;--ink-15:#cbd5e1;--ink-05:#f1f5f9;--ink-02:#f8fafc;
+  --cream:#faf9f6;--warm:#f5f0e8;
+  --gold:#b8963e;--gold-hover:#a17e2f;--gold-soft:rgba(184,150,62,0.08);--gold-border:rgba(184,150,62,0.18);
+  --green:#16a34a;--red:#dc2626;
+  --white:#ffffff;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  --r:8px;--r-lg:14px;--r-xl:20px;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* ─── TOPBAR ─── */
+.topbar{background:var(--ink);color:var(--ink-30);text-align:center;padding:10px 16px;font-size:12px;font-weight:500;letter-spacing:0.5px}
+.topbar b{color:var(--gold)}
+
+/* ─── HERO ─── */
+.hero{position:relative;background:var(--ink);overflow:hidden}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:0.6;filter:saturate(0.5) contrast(1.05)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,23,42,0.88) 0%,rgba(15,23,42,0.65) 40%,rgba(15,23,42,0.35) 100%)}
+.hero-inner{position:relative;z-index:2;width:100%;max-width:1120px;margin:0 auto;padding:50px 20px 60px;display:flex;flex-direction:column;gap:32px}
+
+/* Hero Left */
+.hero-text{max-width:520px}
+.hero-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:20px}
+.hero-label::before{content:'';width:28px;height:1px;background:var(--gold)}
+.hero h1{font-family:var(--serif);font-size:clamp(32px,6vw,56px);font-weight:600;color:var(--white);line-height:1.15;margin-bottom:18px}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero-desc{font-size:16px;color:var(--ink-30);line-height:1.8;margin-bottom:28px;max-width:440px}
+.hero-pills{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:0}
+.pill{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:100px;font-size:13px;color:rgba(255,255,255,0.7);font-weight:500}
+.pill svg{color:var(--gold);flex-shrink:0}
+
+/* ─── FORM ─── */
+.form-card{
+  background:var(--white);
+  border-radius:var(--r-xl);
+  width:100%;max-width:440px;
+  box-shadow:0 25px 80px rgba(0,0,0,0.35),0 4px 15px rgba(0,0,0,0.12);
+  overflow:hidden;margin:0 auto;
+}
+.form-header{
+  background:var(--ink);
+  padding:22px 24px;text-align:center;
+  border-bottom:2px solid var(--gold);
+}
+.form-header h2{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--white);margin-bottom:2px}
+.form-header p{font-size:13px;color:var(--ink-30)}
+.form-body{padding:24px}
+
+/* Progress */
+.prog{display:flex;gap:4px;margin-bottom:4px}
+.prog-dot{flex:1;height:3px;border-radius:3px;background:var(--ink-05);transition:background .4s}
+.prog-dot.on{background:var(--gold)}
+.prog-info{font-size:11px;color:var(--ink-30);text-align:right;margin-bottom:18px;font-weight:500}
+
+/* Steps */
+.stp{display:none;animation:sIn .28s ease}.stp.active{display:block}
+@keyframes sIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.stp-q{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:14px;line-height:1.5}
+
+/* Option buttons */
+.opts{display:flex;flex-direction:column;gap:7px}
+.ob{
+  display:flex;align-items:center;gap:11px;
+  padding:12px 14px;background:var(--white);
+  border:1.5px solid var(--ink-15);border-radius:var(--r);
+  font-size:14px;font-weight:500;color:var(--ink-70);
+  cursor:pointer;transition:all .15s;text-align:left;width:100%;font-family:var(--sans);
+}
+.ob:hover{border-color:var(--gold);background:var(--gold-soft)}
+.ob.sel{border-color:var(--gold);background:var(--gold-soft);color:var(--ink)}
+.ob .rd{
+  width:17px;height:17px;border-radius:50%;border:2px solid var(--ink-15);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;transition:all .15s;
+}
+.ob.sel .rd{border-color:var(--gold);background:var(--gold)}
+.ob.sel .rd::after{content:'';width:5px;height:5px;background:var(--white);border-radius:50%}
+
+/* Select */
+.si{
+  width:100%;padding:12px 14px;background:var(--white);
+  border:1.5px solid var(--ink-15);border-radius:var(--r);
+  font-size:14px;color:var(--ink-70);font-family:var(--sans);
+  cursor:pointer;appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 12px center;transition:border-color .15s;
+}
+.si:focus{outline:none;border-color:var(--gold)}
+
+/* Inputs */
+.fg{margin-bottom:12px}
+.fg label{display:block;font-size:12px;font-weight:600;color:var(--ink-50);margin-bottom:4px;letter-spacing:0.3px}
+.fg input,.fg textarea{
+  width:100%;padding:11px 13px;background:var(--white);
+  border:1.5px solid var(--ink-15);border-radius:var(--r);
+  font-size:16px;color:var(--ink);font-family:var(--sans);transition:border-color .15s;
+}
+.fg input:focus,.fg textarea:focus{outline:none;border-color:var(--gold)}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--ink-30)}
+.r2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+textarea{resize:vertical;min-height:60px;font-size:14px}
+
+/* Primary CTA */
+.btn-go{
+  width:100%;padding:14px;margin-top:14px;
+  background:var(--gold);color:var(--white);
+  border:none;border-radius:var(--r);
+  font-size:15px;font-weight:700;font-family:var(--sans);
+  cursor:pointer;transition:all .2s;letter-spacing:0.3px;
+  box-shadow:0 2px 8px rgba(184,150,62,0.3);
+}
+.btn-go:hover{background:var(--gold-hover);box-shadow:0 4px 16px rgba(184,150,62,0.4);transform:translateY(-1px)}
+.btn-go:disabled{opacity:.35;cursor:not-allowed;transform:none;box-shadow:none}
+.btn-bk{
+  display:inline-flex;align-items:center;gap:4px;
+  background:none;border:none;color:var(--ink-30);
+  font-size:12px;font-family:var(--sans);cursor:pointer;
+  padding:6px 0;margin-top:6px;transition:color .15s;
+}
+.btn-bk:hover{color:var(--ink-50)}
+.tcpa{font-size:9.5px;line-height:1.6;color:var(--ink-30);margin-top:12px}
+.tcpa a{color:var(--ink-50);text-decoration:underline}
+
+/* Thank you */
+.ty{display:none;text-align:center;padding:36px 20px}
+.ty h2{font-family:var(--serif);font-size:28px;color:var(--ink);margin:14px 0 8px}
+.ty p{font-size:14px;color:var(--ink-50);line-height:1.7}
+
+/* ─── SECTIONS ─── */
+.sec{padding:70px 20px}
+.sec-c{max-width:920px;margin:0 auto}
+.sec-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:8px}
+.sec-h{font-family:var(--serif);font-size:clamp(26px,4vw,40px);font-weight:600;color:var(--ink);margin-bottom:12px;line-height:1.2}
+.sec-p{font-size:15px;color:var(--ink-50);max-width:560px;line-height:1.75;margin-bottom:40px}
+
+/* Stats strip */
+.stats{background:var(--white);border-top:1px solid var(--ink-15);border-bottom:1px solid var(--ink-15);padding:32px 20px}
+.stats-g{max-width:780px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}
+.stats-g h3{font-family:var(--serif);font-size:clamp(30px,5vw,46px);font-weight:600;color:var(--ink);margin-bottom:2px}
+.stats-g p{font-size:13px;color:var(--ink-50);font-weight:500}
+
+/* Social proof logos */
+.logos-strip{padding:22px 20px;background:var(--cream);text-align:center}
+.logos-strip span{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--ink-30);font-weight:600;display:block;margin-bottom:12px}
+.logos-row{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;opacity:.3}
+.logos-row b{font-family:var(--serif);font-size:16px;color:var(--ink);letter-spacing:1px}
+
+/* Testimonials */
+.t-grid{display:grid;grid-template-columns:1fr;gap:16px}
+.tc{background:var(--white);border:1px solid var(--ink-15);border-radius:var(--r-lg);padding:24px;box-shadow:0 1px 3px rgba(0,0,0,0.03)}
+.tc-top{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.tc-av{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;color:var(--white);flex-shrink:0}
+.tc-nm{font-weight:600;font-size:14px}.tc-mt{font-size:11px;color:var(--ink-30)}
+.tc-st{margin-left:auto;display:flex;gap:1px}
+.tc-txt{font-size:14px;color:var(--ink-50);line-height:1.75;padding-left:14px;border-left:2px solid var(--gold-border);font-style:italic}
+
+/* Reasons */
+.rg{display:grid;grid-template-columns:1fr;gap:14px}
+.rc{display:flex;gap:16px;align-items:flex-start;background:var(--white);border:1px solid var(--ink-15);border-radius:var(--r-lg);padding:22px;transition:box-shadow .2s}
+.rc:hover{box-shadow:0 4px 16px rgba(0,0,0,0.05)}
+.rc-ic{width:42px;height:42px;border-radius:10px;flex-shrink:0;background:var(--gold-soft);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;color:var(--gold)}
+.rc h3{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.rc p{font-size:13px;color:var(--ink-50);line-height:1.65}
+
+/* CTA Band */
+.cta-band{background:var(--ink);padding:50px 20px;text-align:center}
+.cta-band h2{font-family:var(--serif);font-size:clamp(24px,4vw,38px);font-weight:600;color:var(--white);margin-bottom:6px}
+.cta-band p{font-size:15px;color:var(--ink-30);margin-bottom:20px}
+.btn-g2{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--white);font-weight:700;font-size:14px;padding:13px 28px;border-radius:var(--r);border:none;cursor:pointer;font-family:var(--sans);text-decoration:none;transition:all .2s;letter-spacing:0.2px}
+.btn-g2:hover{background:var(--gold-hover);transform:translateY(-1px)}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:1fr;gap:24px}
+.sc{display:flex;align-items:flex-start;gap:16px}
+.sc-n{width:40px;height:40px;flex-shrink:0;border-radius:50%;background:var(--ink);color:var(--gold);font-family:var(--serif);font-size:18px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.sc h3{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.sc p{font-size:13px;color:var(--ink-50);line-height:1.65}
+
+/* FAQ */
+.faq{max-width:660px;margin:0 auto}
+.fi{border-bottom:1px solid var(--ink-15)}
+.fq{width:100%;display:flex;justify-content:space-between;align-items:center;padding:16px 0;background:none;border:none;color:var(--ink);font-family:var(--sans);font-size:14px;font-weight:600;cursor:pointer;text-align:left;gap:12px}
+.fq svg{flex-shrink:0;transition:transform .3s;color:var(--ink-30)}
+.fq.open svg{transform:rotate(45deg);color:var(--gold)}
+.fa{overflow:hidden;max-height:0;transition:max-height .3s ease,padding .3s ease}
+.fa.open{max-height:300px;padding-bottom:16px}
+.fa p{font-size:13px;color:var(--ink-50);line-height:1.75}
+
+/* Footer */
+footer{background:var(--ink-90);color:var(--ink-50);padding:36px 20px;text-align:center}
+footer .fl{display:flex;justify-content:center;gap:18px;margin-bottom:14px}
+footer .fl a{font-size:12px;color:var(--ink-30);text-decoration:none;font-weight:500}
+footer .fl a:hover{color:var(--gold)}
+footer p{font-size:10px;line-height:1.8;max-width:640px;margin:0 auto;color:var(--ink-50)}
+
+/* Mobile hero image strip */
+.hero-mobile-img{display:none;width:100%;height:200px;overflow:hidden;position:relative}
+.hero-mobile-img img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.hero-mobile-banner{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(180deg,transparent 0%,rgba(15,23,42,0.95) 100%);
+  padding:40px 20px 16px;text-align:center;
+}
+.hero-mobile-banner h2{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--white);line-height:1.2;margin-bottom:4px}
+.hero-mobile-banner p{font-size:12px;color:var(--ink-30)}
+
+/* Sticky CTA */
+.sticky{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-top:1px solid var(--ink-15);padding:10px 16px;z-index:99;display:none;align-items:center;justify-content:space-between;gap:8px}
+.sticky p{font-size:12px;color:var(--ink-50);font-weight:500;flex:1}
+.sticky .sb{background:var(--gold);color:var(--white);font-weight:700;font-size:13px;padding:10px 16px;border-radius:var(--r);border:none;cursor:pointer;font-family:var(--sans);white-space:nowrap}
+
+/* ─── DESKTOP ─── */
+@media(min-width:769px){
+  .hero-inner{flex-direction:row;align-items:center;padding:60px 40px;gap:56px;justify-content:space-between}
+  .form-card{margin:0;flex-shrink:0}
+  .t-grid{grid-template-columns:1fr 1fr}
+  .rg{grid-template-columns:1fr 1fr 1fr}
+  .rc{flex-direction:column}
+  .steps{grid-template-columns:1fr 1fr 1fr}
+  .sc{flex-direction:column;align-items:center;text-align:center}
+  .sticky{display:none!important}
+  .sec{padding:80px 40px}
+}
+@media(max-width:768px){
+  .hero{background:var(--white)}
+  .hero-bg,.hero-overlay{display:none}
+  .hero-mobile-img{display:block}
+  .hero-inner{padding:0 16px 24px;gap:0}
+  .form-card{border-radius:var(--r-lg);margin-top:-20px;position:relative;z-index:3;box-shadow:0 4px 20px rgba(0,0,0,0.1)}
+  .form-header{border-radius:var(--r-lg) var(--r-lg) 0 0}
+  .form-body{padding:18px}
+  .r2{grid-template-columns:1fr}
+  .stats-g{grid-template-columns:1fr;gap:10px}
+  .stats-g>div{display:flex;align-items:center;gap:10px;text-align:left}
+  .stats-g h3{font-size:28px;min-width:70px}
+  .hero-text{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">Filing deadlines may apply — <b>Free confidential evaluation available now</b></div>
+
+<!-- ═════ HERO ═════ -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <img src="https://campaigns.legalhelpadvisor.com/wp-content/uploads/2026/03/Rectangle-1578-compressed.jpg" alt="">
+  </div>
+  <div class="hero-overlay"></div>
+
+  <!-- Mobile: visible image + banner -->
+  <div class="hero-mobile-img">
+    <img src="https://campaigns.legalhelpadvisor.com/wp-content/uploads/2026/03/Rectangle-1578-compressed.jpg" alt="">
+    <div class="hero-mobile-banner">
+      <h2>Get a Free Case Review Today</h2>
+      <p>100% free · No obligation · Confidential</p>
+    </div>
+  </div>
+
+  <div class="hero-inner">
+
+    <div class="hero-text">
+      <div class="hero-label">Rideshare Assault Claims</div>
+      <h1>Were You Assaulted in an <em>Uber</em> or <em>Lyft</em>?</h1>
+      <p class="hero-desc">If you or a loved one experienced assault or inappropriate conduct during a rideshare, you may be entitled to significant compensation.</p>
+      <div class="hero-pills">
+        <span class="pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Free & confidential</span>
+        <span class="pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>No upfront cost</span>
+        <span class="pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Pay nothing unless you win</span>
+      </div>
+    </div>
+
+    <!-- ═════ FORM ═════ -->
+    <div class="form-card" id="formCard">
+      <div class="form-header">
+        <h2>Find Out if You Qualify</h2>
+        <p>Takes less than 60 seconds · 100% free</p>
+      </div>
+      <div class="form-body">
+        <div class="prog" id="prog"><div class="prog-dot on"></div><div class="prog-dot"></div><div class="prog-dot"></div><div class="prog-dot"></div><div class="prog-dot"></div><div class="prog-dot"></div></div>
+        <div class="prog-info" id="pLabel">Step 1 of 6</div>
+
+        <form id="leadForm" novalidate>
+          <input type="hidden" id="leadid_token" name="universal_leadid" value="">
+          <input type="hidden" name="xxTrustedFormCertUrl" id="xxTrustedFormCertUrl" value="">
+          <input type="hidden" name="utm_source" id="utm_source"><input type="hidden" name="utm_medium" id="utm_medium">
+          <input type="hidden" name="utm_campaign" id="utm_campaign"><input type="hidden" name="utm_content" id="utm_content"><input type="hidden" name="utm_term" id="utm_term">
+
+          <!-- S1 -->
+          <div class="stp active" data-step="1">
+            <p class="stp-q">Have you (or a loved one) experienced assault or inappropriate conduct in a rideshare?</p>
+            <div class="opts" data-field="rideshare_type">
+              <button type="button" class="ob" data-value="Uber"><span class="rd"></span>Yes, in an Uber</button>
+              <button type="button" class="ob" data-value="Lyft"><span class="rd"></span>Yes, in a Lyft</button>
+              <button type="button" class="ob" data-value="Other"><span class="rd"></span>Yes, in another rideshare</button>
+              <button type="button" class="ob" data-value="No"><span class="rd"></span>No</button>
+            </div>
+          </div>
+          <!-- S2 -->
+          <div class="stp" data-step="2">
+            <p class="stp-q">What type of abuse/assault did you experience?</p>
+            <select class="si" id="incident_type" name="incident_type">
+              <option value="" disabled selected>— Select one —</option>
+              <option>Inappropriate touching / Fondling</option>
+              <option>Sexual assault (including penetration)</option>
+              <option>Serious physical assault</option>
+              <option>Indecent exposure</option>
+              <option>Verbal abuse or threats</option>
+              <option>Kidnapping / false imprisonment</option>
+              <option>Other</option>
+            </select>
+            <button type="button" class="btn-go" id="btn2" disabled>Continue</button>
+            <button type="button" class="btn-bk" onclick="back()">← Back</button>
+          </div>
+          <!-- S3 -->
+          <div class="stp" data-step="3">
+            <p class="stp-q">When did the abuse/assault occur?</p>
+            <div class="opts" data-field="incident_time">
+              <button type="button" class="ob" data-value="Less than 1 year ago"><span class="rd"></span>Less than 1 year ago</button>
+              <button type="button" class="ob" data-value="1-5 years ago"><span class="rd"></span>1–5 years ago</button>
+              <button type="button" class="ob" data-value="More than 5 years ago"><span class="rd"></span>More than 5 years ago</button>
+            </div>
+          </div>
+          <!-- S4 -->
+          <div class="stp" data-step="4">
+            <p class="stp-q">Have you retained an attorney?</p>
+            <div class="opts" data-field="has_attorney">
+              <button type="button" class="ob" data-value="No"><span class="rd"></span>No</button>
+              <button type="button" class="ob" data-value="Yes"><span class="rd"></span>Yes</button>
+            </div>
+          </div>
+          <!-- S5 -->
+          <div class="stp" data-step="5">
+            <p class="stp-q">A few more details:</p>
+            <div class="fg"><label>Do you have proof of the ride? (App / email receipt)</label>
+              <select class="si" id="has_proof" name="has_proof"><option value="" disabled selected>— Select —</option><option>Yes</option><option>No</option><option>Not sure</option></select>
+            </div>
+            <div class="fg"><label>Did you report the incident to anyone?</label>
+              <select class="si" id="reported" name="reported"><option value="" disabled selected>— Select —</option><option>Yes</option><option>No</option></select>
+            </div>
+            <button type="button" class="btn-go" id="btn5" disabled>Almost Done</button>
+            <button type="button" class="btn-bk" onclick="back()">← Back</button>
+          </div>
+          <!-- S6 -->
+          <div class="stp" data-step="6">
+            <p class="stp-q">Where should we send your evaluation?</p>
+            <div class="r2">
+              <div class="fg"><label>First Name</label><input type="text" id="first_name" name="first_name" placeholder="Jane" required></div>
+              <div class="fg"><label>Last Name</label><input type="text" id="last_name" name="last_name" placeholder="Doe" required></div>
+            </div>
+            <div class="fg"><label>Email</label><input type="email" id="email" name="email" placeholder="jane@email.com" required></div>
+            <div class="fg"><label>Phone Number</label><input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required></div>
+            <div class="r2">
+              <div class="fg"><label>State</label>
+                <select class="si" id="state" name="state"><option value="" disabled selected>State</option><option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option><option>CO</option><option>CT</option><option>DE</option><option>DC</option><option>FL</option><option>GA</option><option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option><option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option><option>MA</option><option>MI</option><option>MN</option><option>MS</option><option>MO</option><option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option><option>NM</option><option>NY</option><option>NC</option><option>ND</option><option>OH</option><option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option><option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option><option>VA</option><option>WA</option><option>WV</option><option>WI</option><option>WY</option></select>
+              </div>
+              <div class="fg"><label>Zip Code</label><input type="text" id="zipcode" name="zipcode" placeholder="10001" maxlength="5" inputmode="numeric" required></div>
+            </div>
+            <div class="fg"><label>Briefly describe what happened (optional)</label><textarea id="description" name="description" placeholder="Share as much or as little as you're comfortable with..."></textarea></div>
+            <button type="submit" class="btn-go" id="btnSub">Do I Qualify ➔</button>
+            <button type="button" class="btn-bk" onclick="back()">← Back</button>
+            <p class="tcpa">By clicking "Do I Qualify" and submitting my request, I confirm that I have read and agree to the <a href="#">privacy policy</a> of this site and consent to receive emails, phone calls, and/or text messages from this site and its network of lawyers and advocates at any telephone number or email address provided, including my wireless number. I understand communications may be generated using an autodialer and may contain pre-recorded messages. Consent is not required for services. This authorization overrides any previous Do Not Call registry registrations.</p>
+          </div>
+        </form>
+        <div class="ty" id="tyMsg">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="8 12 11 15 16 9"/></svg>
+          <h2>You May Qualify</h2>
+          <p>A qualified team member will contact you within <strong>24 hours</strong> to discuss your case confidentially.</p>
+          <p style="margin-top:12px;font-size:12px;color:var(--ink-30)">Immediate help: <b style="color:var(--ink)">(800) 555-0199</b></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-g">
+    <div><h3>6,000+</h3><p>Reported Incidents</p></div>
+    <div><h3>$0</h3><p>Upfront Cost</p></div>
+    <div><h3>100%</h3><p>Free Consultation</p></div>
+  </div>
+</div>
+
+<!-- LOGOS -->
+<div class="logos-strip">
+  <span>As Seen On</span>
+  <div class="logos-row"><b>CNN</b><b>NBC</b><b>ABC News</b><b>Fox News</b><b>CBS</b></div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="sec" style="background:var(--cream)">
+  <div class="sec-c">
+    <div class="sec-label">What Others Are Saying</div>
+    <div class="sec-h">Real People. Real Results.</div>
+    <div style="height:12px"></div>
+    <div class="t-grid">
+      <div class="tc">
+        <div class="tc-top">
+          <div class="tc-av" style="background:var(--ink)">S</div>
+          <div><div class="tc-nm">Sarah M.</div><div class="tc-mt">Verified · Texas</div></div>
+          <div class="tc-st"><svg width="13" height="13" viewBox="0 0 24 24" fill="#b8963e"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="#b8963e"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="#b8963e"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="#b8963e"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="#b8963e"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        </div>
+        <p class="tc-txt">I was terrified to come forward. The team made the entire process painless and confidential. I received my settlement within months.</p>
+      </div>
+      <div class="tc">
+        <div class="tc-top">
+          <div class="tc-av" style="background:var(--ink-70)">J</div>
+          <div><div class="tc-nm">Jessica R.</div><div class="tc-mt">Verified · California</div></div>
+          <div class="tc-st"><svg width="13" height="13" viewBox="0 0 24 24" fill="#b8963e"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="#b8963e"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="#b8963e"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="#b8963e"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="#b8963e"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        </div>
+        <p class="tc-txt">I didn't think I had a case because it happened years ago. They helped me understand my rights and fought for me every step of the way.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY -->
+<div class="sec" style="background:var(--white)">
+  <div class="sec-c">
+    <div class="sec-label">Why This Matters</div>
+    <div class="sec-h">Why You May Be Entitled to Compensation</div>
+    <div class="sec-p">Rideshare companies have a duty to protect passengers. When they fail, the law provides a path to justice.</div>
+    <div class="rg">
+      <div class="rc">
+        <div class="rc-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><h3>Inadequate Screening</h3><p>Companies accused of failing to properly vet drivers before putting them behind the wheel.</p></div>
+      </div>
+      <div class="rc">
+        <div class="rc-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg></div>
+        <div><h3>Thousands Affected</h3><p>Over 6,000 reported incidents. Courts are now holding rideshare platforms accountable.</p></div>
+      </div>
+      <div class="rc">
+        <div class="rc-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+        <div><h3>You Deserve Justice</h3><p>Our network of attorneys helps — confidentially and at absolutely no cost to you.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <h2>You Pay Nothing Unless You Win</h2>
+  <p>Attorneys only get paid when they successfully recover compensation for you.</p>
+  <a href="#hero" class="btn-g2">Check If You Qualify ➔</a>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="sec" style="background:var(--cream)">
+  <div class="sec-c">
+    <div class="sec-label">Simple Process</div>
+    <div class="sec-h">How It Works</div>
+    <div style="height:8px"></div>
+    <div class="steps">
+      <div class="sc"><div class="sc-n">1</div><div><h3>Complete Evaluation</h3><p>Answer a few confidential questions. Takes under 60 seconds.</p></div></div>
+      <div class="sc"><div class="sc-n">2</div><div><h3>Get Matched</h3><p>A legal advocate reviews your case and contacts you within 24 hours.</p></div></div>
+      <div class="sc"><div class="sc-n">3</div><div><h3>Pursue Compensation</h3><p>Your attorney fights for what you deserve — zero upfront fees.</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="sec" style="background:var(--white)">
+  <div class="sec-c">
+    <div class="sec-label">Common Questions</div>
+    <div class="sec-h">Frequently Asked Questions</div>
+    <div style="height:8px"></div>
+    <div class="faq">
+      <div class="fi"><button class="fq" onclick="tf(this)">Will this cost me anything?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="fa"><p>No. The evaluation is completely free. Attorneys are only paid when they win your case.</p></div></div>
+      <div class="fi"><button class="fq" onclick="tf(this)">Am I eligible?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="fa"><p>If you were assaulted while riding in an Uber or Lyft, you may qualify. Details are discussed confidentially after the evaluation.</p></div></div>
+      <div class="fi"><button class="fq" onclick="tf(this)">What happens after I submit?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="fa"><p>A team member reviews your case and contacts you within 24 hours. Everything is 100% confidential.</p></div></div>
+      <div class="fi"><button class="fq" onclick="tf(this)">Is my information protected?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="fa"><p>Yes. All data is encrypted and HIPAA-compliant. We never sell your information to third parties.</p></div></div>
+      <div class="fi"><button class="fq" onclick="tf(this)">Do I need proof?<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="fa"><p>Proof strengthens your case but is not required. Your legal team helps gather evidence.</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fl"><a href="#">Privacy Policy</a><a href="#">Terms & Conditions</a></div>
+  <p><b>Attorney Advertising:</b> This is not legal advice. Consult an attorney for your situation. Contact does not create an attorney-client relationship. Do not send confidential information until that relationship is established. Prior results do not guarantee similar outcomes.</p>
+  <p style="margin-top:10px;opacity:.6">© 2026 All Rights Reserved.</p>
+</footer>
+
+<!-- STICKY -->
+<div class="sticky" id="stk">
+  <p>Free confidential evaluation</p>
+  <button class="sb" onclick="document.getElementById('hero').scrollIntoView({behavior:'smooth'})">Check If I Qualify ➔</button>
+</div>
+
+<script>
+// UTM
+(function(){const p=new URLSearchParams(location.search);['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(f=>{const e=document.getElementById(f);if(e)e.value=p.get(f)||''})})();
+
+const D={};let cur=1,tot=6;
+
+// Options
+document.querySelectorAll('.opts').forEach(g=>{const f=g.dataset.field;g.querySelectorAll('.ob').forEach(b=>{b.addEventListener('click',()=>{g.querySelectorAll('.ob').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');D[f]=b.dataset.value;if(f==='rideshare_type'&&b.dataset.value==='No'){alert("Based on your answer, you may not qualify at this time.");return}setTimeout(nx,280)})})});
+
+// Selects
+document.getElementById('incident_type').addEventListener('change',function(){document.getElementById('btn2').disabled=!this.value});
+document.getElementById('btn2').addEventListener('click',()=>{D.incident_type=document.getElementById('incident_type').value;nx()});
+['has_proof','reported'].forEach(id=>{document.getElementById(id).addEventListener('change',()=>{document.getElementById('btn5').disabled=!(document.getElementById('has_proof').value&&document.getElementById('reported').value)})});
+document.getElementById('btn5').addEventListener('click',()=>{D.has_proof=document.getElementById('has_proof').value;D.reported=document.getElementById('reported').value;nx()});
+
+function nx(){if(cur>=tot)return;cur++;upd()}
+function back(){if(cur<=1)return;cur--;upd()}
+function upd(){document.querySelectorAll('.stp').forEach(s=>s.classList.remove('active'));const t=document.querySelector(`.stp[data-step="${cur}"]`);if(t)t.classList.add('active');document.querySelectorAll('.prog-dot').forEach((d,i)=>d.classList.toggle('on',i<cur));document.getElementById('pLabel').textContent=`Step ${cur} of ${tot}`}
+
+// Submit
+document.getElementById('leadForm').addEventListener('submit',async function(e){e.preventDefault();
+['first_name','last_name','email','phone','state','zipcode','description'].forEach(f=>{D[f]=document.getElementById(f).value});
+D.universal_leadid=document.getElementById('leadid_token').value;
+D.xxTrustedFormCertUrl=document.getElementById('xxTrustedFormCertUrl').value;
+['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(f=>{D[f]=document.getElementById(f).value});
+if(!D.first_name||!D.last_name||!D.email||!D.phone){alert('Please fill in all required fields.');return}
+const b=document.getElementById('btnSub');b.disabled=true;b.textContent='Submitting...';
+try{await fetch('https://YOUR-WEBHOOK-URL.com/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(D)});done()}catch(er){done()}});
+
+function done(){document.getElementById('leadForm').style.display='none';document.getElementById('prog').style.display='none';document.getElementById('pLabel').style.display='none';document.getElementById('tyMsg').style.display='block'}
+
+// Sticky
+const h=document.getElementById('hero'),sk=document.getElementById('stk');
+if(window.innerWidth<769){window.addEventListener('scroll',()=>{sk.style.display=h.getBoundingClientRect().bottom<0?'flex':'none'},{passive:true})}
+
+// FAQ
+function tf(b){const a=b.nextElementSibling,o=a.classList.contains('open');document.querySelectorAll('.fa').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.fq').forEach(x=>x.classList.remove('open'));if(!o){a.classList.add('open');b.classList.add('open')}}
+
+// Phone format
+document.getElementById('phone').addEventListener('input',function(e){let v=e.target.value.replace(/\D/g,'');if(v.length>10)v=v.substring(0,10);if(v.length>=7)v=`(${v.substring(0,3)}) ${v.substring(3,6)}-${v.substring(6)}`;else if(v.length>=4)v=`(${v.substring(0,3)}) ${v.substring(3)}`;else if(v.length>=1)v=`(${v}`;e.target.value=v});
+document.getElementById('zipcode').addEventListener('input',function(e){e.target.value=e.target.value.replace(/\D/g,'').substring(0,5)});
+</script>
+</body>
+</html>
