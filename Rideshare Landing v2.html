@@ -1,0 +1,1376 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Rideshare Assault Legal Review — Confidential & Free | LegalAdviceWorks</title>
+<meta name="description" content="If you were harmed during a rideshare trip, you may be entitled to compensation. Free, confidential legal review. No fees unless you win." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script>
+// ------ Tweakable defaults ------
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "accent": "#b8963e",
+  "ink": "#0f172a",
+  "bg": "#faf9f6",
+  "heroImageIndex": 0,
+  "headlineToneIndex": 2,
+  "formCardDark": false
+}/*EDITMODE-END*/;
+</script>
+
+<style>
+:root{
+  --ink:#0f172a;
+  --ink-2:#1e2a3d;
+  --ink-muted:#4b5766;
+  --bg:#faf9f6;
+  --bg-2:#f2efe8;
+  --line:#e7e3d8;
+  --line-2:#d9d3c3;
+  --accent:#b8963e;
+  --accent-2:#9e7f32;
+  --accent-soft:#f4ecd4;
+  --card:#ffffff;
+  --shadow-card: 0 1px 3px rgba(15,23,42,.04), 0 10px 30px rgba(15,23,42,.05);
+  --shadow-hero: 0 25px 80px rgba(15,23,42,.35), 0 2px 6px rgba(15,23,42,.15);
+  --radius: 14px;
+  --radius-lg: 20px;
+  --radius-sm: 8px;
+  --serif: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --sans: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--bg);
+  font-size: 16px;
+  line-height: 1.55;
+  font-feature-settings: "ss01","cv11";
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font-family:inherit}
+
+/* ---------- layout ---------- */
+.wrap{ max-width: 1180px; margin: 0 auto; padding: 0 22px; }
+@media (min-width: 900px){ .wrap{ padding: 0 40px; } }
+
+/* ---------- top bar ---------- */
+.topbar{
+  position:relative; z-index:5;
+  background: #0b1220;
+  color:#e9e4d4;
+  border-bottom:1px solid rgba(184,150,62,.25);
+}
+.topbar .row{
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 11px 0; gap:14px;
+}
+.brand{
+  display:flex; align-items:center; gap:12px;
+}
+.brand img{
+  height: 26px; width:auto; display:block;
+}
+.brand .divider{
+  width:1px; height:20px; background: rgba(184,150,62,.35);
+}
+.brand .tagline{
+  font-family: var(--sans); font-weight:500;
+  font-size: 11px; letter-spacing:.14em; text-transform:uppercase;
+  color: #b8963e;
+  display:none;
+}
+@media (min-width: 560px){ .brand .tagline{ display:inline; } }
+.topbar .phone{
+  display:inline-flex; align-items:center; gap:8px;
+  font-size: 14px; font-weight:600;
+  color:#e9e4d4; text-decoration:none;
+  padding: 8px 12px; border-radius: 999px;
+  border:1px solid rgba(184,150,62,.4);
+  background: rgba(184,150,62,.08);
+  white-space:nowrap;
+}
+.topbar .phone svg{width:14px;height:14px;stroke:var(--accent);fill:none;stroke-width:2}
+.topbar .phone .label{ display:none; color:#a8a192; font-weight:500; font-size:12px;}
+@media (min-width: 720px){ .topbar .phone .label{ display:inline; } }
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;
+  background: #0b1220;
+  color: #f2ece0;
+  overflow:hidden;
+}
+.hero-media{
+  position:absolute; inset:0;
+  background-size: cover; background-position: center;
+  filter: saturate(.9);
+}
+.hero-media::after{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    linear-gradient(100deg, rgba(11,18,32,.92) 0%, rgba(11,18,32,.82) 35%, rgba(11,18,32,.45) 70%, rgba(11,18,32,.15) 100%);
+}
+.hero-grain{
+  position:absolute; inset:0; pointer-events:none; opacity:.35; mix-blend-mode: overlay;
+  background-image: radial-gradient(rgba(255,255,255,.07) 1px, transparent 1px);
+  background-size: 3px 3px;
+}
+.hero-inner{
+  position:relative; z-index:2;
+  padding: 36px 0 44px;
+  display:grid; gap: 28px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 900px){
+  .hero-inner{
+    grid-template-columns: 1.05fr 1fr;
+    gap: 56px;
+    padding: 72px 0 92px;
+    align-items:start;
+  }
+}
+.eyebrow{
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:12px; font-weight:600; letter-spacing:.16em; text-transform:uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.eyebrow::before{
+  content:""; width:24px; height:1px; background: var(--accent);
+}
+.hero h1{
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin: 0 0 28px;
+  color: #f8f1df;
+  text-wrap: pretty;
+  padding-bottom: 2px;
+}
+.hero h1 em{ font-style: italic; color: var(--accent); font-weight:500; line-height:1;}
+.hero-sub{
+  font-size: 17px; line-height:1.55;
+  color: rgba(242,236,224,.82);
+  max-width: 48ch; margin: 0 0 22px;
+}
+.pills{
+  display:flex; flex-wrap:wrap; gap: 8px 10px; margin-top: 18px;
+}
+.pill{
+  display:inline-flex; align-items:center; gap:8px;
+  font-size: 12.5px; font-weight:500;
+  padding: 7px 12px;
+  border-radius: 999px;
+  color: #e9e4d4;
+  background: rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.14);
+  backdrop-filter: blur(2px);
+}
+.pill svg{width:12px;height:12px;stroke:var(--accent);fill:none;stroke-width:2.2}
+.hero-desktop-only{ display:none; }
+@media (min-width: 900px){
+  .hero-desktop-only{ display:block; }
+}
+
+/* Mobile image strip (Sokolove pattern) */
+.mobile-image{
+  display:block; position:relative;
+  height: 200px;
+  margin: 0 -22px;
+  overflow:hidden;
+  background: #1a2333;
+}
+.mobile-image .mimg{
+  position:absolute; inset:0;
+  background-size: cover; background-position: center;
+}
+.mobile-image::after{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(11,18,32,.15) 0%, rgba(11,18,32,.25) 55%, rgba(11,18,32,.92) 100%);
+}
+.mobile-banner{
+  position:absolute; left:22px; right:22px; bottom:14px;
+  z-index:2; color:#f8f1df;
+}
+.mobile-banner .eyebrow{margin-bottom:8px}
+.mobile-banner h1{
+  font-family: var(--serif); font-weight:600;
+  font-size: 28px; line-height:1.08; margin:0;
+  letter-spacing:-.005em;
+}
+.mobile-banner h1 em{ color: var(--accent); font-style: italic; font-weight:500;}
+@media (min-width: 900px){
+  .mobile-image{ display:none; }
+}
+
+/* ---------- FORM CARD ---------- */
+.form-card{
+  background: var(--card);
+  color: var(--ink);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-hero);
+  overflow: hidden;
+  position: relative;
+  margin-top: -18px; /* overlaps mobile image strip */
+}
+@media (min-width: 900px){
+  .form-card{ margin-top: 0; }
+}
+.form-head{
+  background: #0b1220;
+  color:#f8f1df;
+  padding: 20px 22px 18px;
+  position:relative;
+}
+.form-head::after{
+  content:""; position:absolute; left:22px; right:22px; bottom:0; height:2px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent) 60%, transparent 100%);
+}
+.form-head h2{
+  font-family: var(--serif); font-weight:600;
+  font-size: 24px; line-height:1.15; margin: 0 0 4px;
+  letter-spacing:-.005em;
+}
+.form-head p{
+  font-size: 13px; color: rgba(248,241,223,.72); margin:0;
+}
+.form-body{ padding: 20px 22px 22px; }
+
+/* progress */
+.progress-wrap{ margin-bottom: 14px; }
+.progress-label{
+  display:flex; justify-content:space-between; align-items:center;
+  font-size: 11px; font-weight:600; letter-spacing:.12em; text-transform:uppercase;
+  color: var(--ink-muted); margin-bottom: 8px;
+}
+.progress-bar{
+  height: 4px; border-radius: 999px;
+  background: var(--line);
+  overflow:hidden;
+}
+.progress-fill{
+  height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  width: 16.6%; transition: width .35s cubic-bezier(.4,0,.2,1);
+  border-radius:999px;
+}
+
+/* step */
+.q-block{ padding-top: 14px; border-top: 1px solid var(--line); margin-top: 14px; }
+.q-block:first-of-type{ border-top: 0; padding-top: 0; margin-top: 0; }
+.q-num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--accent-soft); color: var(--accent);
+  font-family: var(--sans); font-weight:700; font-size: 13px;
+  margin-right: 8px; vertical-align: 2px;
+}
+.options-grid{ display:grid; gap: 8px; grid-template-columns: 1fr 1fr; }
+@media (max-width: 480px){ .options-grid{ grid-template-columns: 1fr; } }
+.step{ display:none; animation: fadeUp .28s ease both; }
+.step.active{ display:block; }
+@keyframes fadeUp{
+  from{ opacity:0; transform: translateY(8px); }
+  to{ opacity:1; transform:none; }
+}
+.q-title{
+  font-family: var(--serif);
+  font-size: 22px; line-height:1.2; margin: 4px 0 4px;
+  font-weight: 600; color: var(--ink);
+  letter-spacing: -.005em;
+}
+.q-help{
+  font-size: 13px; color: var(--ink-muted); margin: 0 0 14px;
+}
+
+/* option buttons */
+.options{ display:grid; gap: 8px; }
+.opt{
+  display:flex; align-items:center; gap: 12px;
+  width:100%; text-align:left;
+  background:#fff; color: var(--ink);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 13px 14px;
+  font-size: 15.5px; font-weight:500;
+  cursor:pointer; transition: .18s ease;
+  min-height: 48px;
+}
+.opt:hover{
+  border-color: var(--accent);
+  background: #fbf6e7;
+}
+.opt .dot{
+  flex:none; width:18px;height:18px;border-radius:50%;
+  border: 2px solid var(--line-2);
+  position:relative; transition:.18s ease;
+}
+.opt.selected{
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.opt.selected .dot{
+  border-color: var(--accent);
+}
+.opt.selected .dot::after{
+  content:""; position:absolute; inset: 3px;
+  background: var(--accent); border-radius:50%;
+}
+.opt .opt-label{ flex:1; }
+.opt .opt-meta{
+  font-size: 12px; font-weight:500; color: var(--ink-muted);
+}
+
+/* inputs */
+.field{ margin-bottom: 12px; }
+.field label{
+  display:block; font-size: 12px; font-weight:600;
+  letter-spacing:.06em; text-transform:uppercase;
+  color: var(--ink-muted); margin-bottom: 6px;
+}
+.field input, .field select, .field textarea{
+  width:100%;
+  font-family: var(--sans);
+  font-size: 16px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  transition: .18s ease;
+  min-height: 48px;
+}
+.field textarea{ min-height: 80px; resize: vertical; }
+.field input:focus, .field select:focus, .field textarea:focus{
+  outline:none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(184,150,62,.18);
+}
+.row-2{ display:grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 480px){ .row-2{ grid-template-columns: 1fr; } }
+
+/* buttons */
+.btn{
+  appearance:none; border:0; cursor:pointer;
+  font-family: var(--sans); font-weight:700;
+  font-size: 15.5px; letter-spacing:.01em;
+  padding: 14px 18px; border-radius: var(--radius-sm);
+  transition: .18s ease;
+  min-height: 48px;
+}
+.btn-primary{
+  width:100%;
+  background: var(--accent); color:#fff;
+  box-shadow: 0 6px 18px rgba(184,150,62,.35);
+}
+.btn-primary:hover{ background: var(--accent-2); transform: translateY(-1px); box-shadow: 0 10px 24px rgba(184,150,62,.4);}
+.btn-primary:disabled{ opacity:.35; cursor:not-allowed; transform:none; box-shadow:none;}
+.btn-ghost{
+  background: transparent; color: var(--ink-muted);
+  border: 1.5px solid var(--line);
+}
+.btn-ghost:hover{ color: var(--ink); border-color: var(--line-2); background:#fff;}
+#submit-btn{
+  width:100%;
+  margin-top: 18px;
+}
+.back{
+  display:inline-flex; align-items:center; gap:6px;
+  background:transparent; border:0; color: var(--ink-muted);
+  font-size: 14px; font-weight:500; cursor:pointer;
+  padding: 8px 2px;
+}
+.back:hover{ color: var(--ink); }
+.back svg{ width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;}
+
+.tcpa{
+  font-size: 10px; line-height:1.45;
+  color: var(--ink-muted);
+  margin-top: 12px;
+}
+.tcpa a{ color: var(--ink-muted); text-decoration: underline; }
+
+.disqualify{
+  padding: 18px; border-radius: var(--radius-sm);
+  background: #fbf6e7; border:1px solid var(--line-2);
+  font-size: 14.5px; color: var(--ink-2);
+}
+.disqualify h3{
+  font-family: var(--serif); font-size: 20px; font-weight:600; margin: 0 0 6px;
+}
+
+.thank-you{
+  text-align:center; padding: 30px 14px;
+}
+.thank-you .check{
+  width:56px;height:56px;border-radius:50%;
+  background: var(--accent-soft); color: var(--accent);
+  display:flex;align-items:center;justify-content:center;
+  margin: 0 auto 14px;
+}
+.thank-you .check svg{ width:28px;height:28px;stroke:currentColor;fill:none;stroke-width:2.5}
+.thank-you h3{
+  font-family: var(--serif); font-size: 26px; margin: 0 0 6px; font-weight:600;
+}
+.thank-you p{ color: var(--ink-muted); margin: 0 0 14px;}
+
+/* ---------- STATS STRIP ---------- */
+.stats{
+  background: var(--bg-2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.stats .grid{
+  display:grid; grid-template-columns: repeat(3, 1fr);
+  gap: 0; padding: 28px 0;
+}
+@media (max-width: 640px){
+  .stats .grid{ grid-template-columns: 1fr; gap: 18px; padding: 26px 0;}
+}
+.stat{ text-align:center; padding: 6px 16px; position:relative; }
+.stat + .stat{ border-left: 1px solid var(--line); }
+@media (max-width: 640px){
+  .stat + .stat{ border-left:0; border-top: 1px solid var(--line); padding-top:18px;}
+}
+.stat-num{
+  font-family: var(--serif); font-weight:600;
+  font-size: clamp(30px, 5vw, 40px);
+  color: var(--ink); line-height:1; letter-spacing:-.01em;
+}
+.stat-num .sym{ color: var(--accent); font-style: italic; }
+.stat-lbl{
+  font-size: 12.5px; font-weight:500; letter-spacing:.06em;
+  text-transform: uppercase; color: var(--ink-muted);
+  margin-top: 8px;
+}
+
+/* ---------- PRESS ---------- */
+.press{
+  padding: 38px 0 32px;
+  text-align:center;
+}
+.press .kicker{
+  font-size: 11px; font-weight:600; letter-spacing:.18em;
+  text-transform: uppercase; color: var(--ink-muted); margin-bottom: 14px;
+}
+.press-row{
+  display:flex; flex-wrap: wrap; justify-content: center; align-items:center;
+  gap: 18px 34px;
+}
+.press-name{
+  font-family: var(--serif); font-size: 22px; font-weight:600;
+  color: var(--ink); opacity: .32; letter-spacing:.02em;
+}
+.press-note{
+  font-size: 11px; color: var(--ink-muted); margin-top: 14px; opacity:.7;
+}
+
+/* ---------- SECTION HEAD ---------- */
+.section{ padding: 64px 0; }
+@media (min-width: 900px){ .section{ padding: 84px 0; } }
+.section-head{ max-width: 720px; margin: 0 auto 36px; text-align:center; }
+.section-head .eyebrow-dark{
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:11px; font-weight:600; letter-spacing:.18em; text-transform:uppercase;
+  color: var(--accent); margin-bottom: 10px;
+}
+.section-head .eyebrow-dark::before{
+  content:""; width:22px;height:1px; background: var(--accent);
+}
+.section-head h2{
+  font-family: var(--serif); font-weight:600;
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.1; margin: 0 0 10px;
+  letter-spacing:-.01em;
+}
+.section-head p{
+  color: var(--ink-muted); margin: 0; font-size: 16.5px;
+}
+
+/* ---------- REASSURANCE (process) ---------- */
+.reassure{ background: var(--bg); }
+.reassure-grid{
+  display:grid; gap: 18px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 820px){
+  .reassure-grid{ grid-template-columns: repeat(3, 1fr); gap: 22px; }
+}
+.reassure-card{
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px 24px;
+  box-shadow: var(--shadow-card);
+  position:relative;
+}
+.reassure-card .ico{
+  width:42px;height:42px; border-radius:10px;
+  background: var(--accent-soft); color: var(--accent);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom: 14px;
+}
+.reassure-card .ico svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8}
+.reassure-card h3{
+  font-family: var(--serif); font-weight:600;
+  font-size: 22px; margin: 0 0 6px; letter-spacing:-.005em;
+}
+.reassure-card p{ color: var(--ink-muted); margin:0; font-size: 15px;}
+
+/* ---------- WHY ---------- */
+.why{ background: var(--bg-2); }
+
+/* ---------- CTA BAND ---------- */
+.ctaband{
+  background: #0b1220;
+  color: #f4eed8;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.ctaband::before{
+  content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(600px 200px at 20% 30%, rgba(184,150,62,.18), transparent 60%),
+    radial-gradient(500px 200px at 85% 70%, rgba(184,150,62,.12), transparent 60%);
+}
+.ctaband-inner{
+  position:relative; z-index:1;
+  padding: 64px 0;
+}
+.ctaband h2{
+  font-family: var(--serif); font-weight:600;
+  font-size: clamp(30px, 4.5vw, 46px);
+  margin: 0 0 10px; letter-spacing:-.01em;
+}
+.ctaband h2 em{ color: var(--accent); font-style: italic; font-weight:500;}
+.ctaband p{ color: rgba(244,238,216,.75); margin: 0 auto 22px; max-width: 56ch;}
+.ctaband .btn{
+  display:inline-block; width:auto; padding: 14px 26px;
+  text-decoration:none;
+}
+
+/* ---------- HOW IT WORKS ---------- */
+.how{ background: var(--bg); }
+.how-grid{
+  display:grid; gap: 22px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 820px){
+  .how-grid{ grid-template-columns: repeat(3, 1fr); gap: 32px; text-align:center; }
+}
+.how-step{
+  display:flex; gap:18px; align-items:flex-start;
+  padding: 8px 0;
+}
+@media (min-width: 820px){
+  .how-step{ flex-direction: column; align-items: center; text-align:center; }
+}
+.how-num{
+  flex:none;
+  width:56px;height:56px;border-radius:50%;
+  background: #0b1220; color: var(--accent);
+  font-family: var(--serif); font-weight:600; font-size: 24px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow: inset 0 0 0 1px rgba(184,150,62,.5);
+}
+.how-step h3{
+  font-family: var(--serif); font-weight:600;
+  font-size: 22px; margin:0 0 6px; letter-spacing:-.005em;
+}
+.how-step p{ color: var(--ink-muted); margin:0; font-size: 15px;}
+
+/* ---------- FAQ ---------- */
+.faq{ background: var(--bg-2); }
+.faq-list{ max-width: 760px; margin: 0 auto; }
+.faq-item{
+  background:#fff; border:1px solid var(--line);
+  border-radius: var(--radius); margin-bottom: 10px;
+  box-shadow: var(--shadow-card);
+  overflow:hidden;
+}
+.faq-q{
+  display:flex; align-items:center; justify-content:space-between;
+  width:100%; text-align:left; padding: 18px 20px;
+  background:transparent; border:0; cursor:pointer;
+  font-family: var(--serif); font-size: 19px; font-weight:600;
+  color: var(--ink); letter-spacing:-.005em;
+  min-height: 56px;
+}
+.faq-q .plus{
+  width:22px;height:22px; flex:none;
+  color: var(--accent);
+  transition: transform .25s ease;
+}
+.faq-item.open .faq-q .plus{ transform: rotate(45deg); }
+.faq-a{
+  max-height:0; overflow:hidden; transition: max-height .3s ease;
+  padding: 0 20px;
+}
+.faq-item.open .faq-a{ max-height: 320px; padding-bottom: 18px;}
+.faq-a p{ margin: 0; color: var(--ink-muted); font-size: 15.5px; line-height: 1.6;}
+
+/* ---------- FOOTER ---------- */
+footer{
+  background: #0b1220; color: #9aa1ae;
+  padding: 32px 0 28px; font-size: 13px;
+}
+footer .flinks{
+  display:flex; flex-wrap:wrap; gap: 16px; justify-content:center;
+  margin-bottom: 12px;
+}
+footer a{ color: #c9c6bd; text-decoration:none; }
+footer a:hover{ text-decoration: underline;}
+footer .disclaimer{
+  max-width: 860px; margin: 0 auto; text-align:center;
+  color: #7a8192; font-size: 12px; line-height:1.6; opacity:.9;
+}
+footer .copy{ text-align:center; margin-top: 12px; color:#7a8192; }
+
+/* ---------- MOBILE STICKY CTA ---------- */
+.sticky-cta{
+  position: fixed; left:0; right:0; bottom:0; z-index: 40;
+  background: #0b1220;
+  border-top: 1px solid rgba(184,150,62,.3);
+  padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+  display:none; align-items:center; gap: 12px;
+  box-shadow: 0 -6px 20px rgba(0,0,0,.25);
+  transform: translateY(100%);
+  transition: transform .3s ease;
+}
+.sticky-cta.show{ transform: translateY(0); }
+.sticky-cta .stxt{
+  flex:1; color:#e9e4d4; font-size:12.5px; line-height:1.25;
+}
+.sticky-cta .stxt b{ color:#f8f1df; font-weight:600;}
+.sticky-cta .btn{
+  padding: 11px 16px; font-size: 14px; min-height:44px;
+  border-radius: 999px;
+}
+@media (max-width: 899px){
+  .sticky-cta{ display:flex; }
+  body{ padding-bottom: 76px; }
+}
+
+/* ---------- TWEAKS PANEL ---------- */
+.tweaks-btn{
+  position: fixed; right: 14px; bottom: 90px; z-index: 50;
+  display:none;
+}
+@media (min-width: 900px){ .tweaks-btn{ bottom: 14px; } }
+.tweaks-panel{
+  position: fixed; right: 14px; bottom: 140px; z-index: 60;
+  width: 280px;
+  background:#fff; color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.18);
+  padding: 16px; display:none;
+  font-family: var(--sans);
+}
+@media (min-width: 900px){ .tweaks-panel{ bottom: 64px;} }
+.tweaks-panel.active, .tweaks-btn.active{ display:block; }
+.tweaks-panel h4{
+  font-family: var(--serif); font-size: 18px; margin: 0 0 10px; font-weight:600;
+}
+.tweaks-panel .tweak{ margin-bottom: 12px; }
+.tweaks-panel label{
+  display:block; font-size: 11px; font-weight:600; letter-spacing:.1em;
+  text-transform:uppercase; color: var(--ink-muted); margin-bottom: 6px;
+}
+.swatches{ display:flex; gap:8px; flex-wrap:wrap;}
+.sw{
+  width:28px;height:28px;border-radius: 50%; border: 2px solid #fff;
+  box-shadow: 0 0 0 1px var(--line-2); cursor:pointer; transition:.15s ease;
+}
+.sw.active{ box-shadow: 0 0 0 2px var(--ink); transform: scale(1.08);}
+.seg{
+  display:flex; gap: 4px; background: var(--bg-2); padding: 3px; border-radius: 8px;
+}
+.seg button{
+  flex:1; background:transparent; border:0; cursor:pointer;
+  font-size: 12px; font-weight:600; color: var(--ink-muted);
+  padding: 7px 6px; border-radius: 6px;
+}
+.seg button.active{ background:#fff; color: var(--ink); box-shadow: 0 1px 3px rgba(0,0,0,.08);}
+.tweaks-btn button{
+  background: var(--ink); color: var(--bg);
+  border:0; cursor:pointer; font-size: 12px; font-weight:600;
+  padding: 9px 13px; border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.18);
+}
+.tweaks-panel .close{
+  position:absolute; top:10px; right:10px;
+  background:transparent; border:0; cursor:pointer;
+  color: var(--ink-muted); font-size: 20px; line-height:1;
+}
+</style>
+</head>
+<body data-screen-label="Rideshare Landing">
+
+<!-- ============ TOP BAR ============ -->
+<header class="topbar">
+  <div class="wrap">
+    <div class="row">
+      <a class="brand" href="#hero" aria-label="LegalAdviceWorks home">
+        <img src="assets/logo-white.png" alt="LegalAdviceWorks" />
+        <span class="divider" aria-hidden="true"></span>
+        <span class="tagline">Rideshare Legal Review</span>
+      </a>
+      <a href="tel:+18885550199" class="phone">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="label">Call</span>
+        <strong>(888) 555-0199</strong>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero-media" id="hero-media"></div>
+  <div class="hero-grain"></div>
+
+  <div class="wrap">
+    <!-- Mobile image strip -->
+    <div class="mobile-image">
+      <div class="mimg" id="mobile-mimg"></div>
+      <div class="mobile-banner">
+        <span class="eyebrow">Confidential Legal Review</span>
+        <h1 id="mobile-headline">You deserve to be <em>heard.</em></h1>
+      </div>
+    </div>
+
+    <div class="hero-inner">
+      <!-- Desktop text column -->
+      <div class="hero-desktop-only">
+        <span class="eyebrow">Confidential Legal Review</span>
+        <h1 id="desktop-headline">
+          If you were harmed during a rideshare trip, your case <em>deserves a hearing.</em>
+        </h1>
+        <p class="hero-sub" id="desktop-sub">
+          Free, private case review with attorneys handling rideshare assault claims against Uber and Lyft. No fees unless your case is won.
+        </p>
+        <div class="pills">
+          <span class="pill"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>100% Confidential</span>
+          <span class="pill"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>No Fees Unless You Win</span>
+          <span class="pill"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Free Case Review</span>
+          <span class="pill"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Statute Deadlines Apply</span>
+        </div>
+      </div>
+
+      <!-- Form card -->
+      <div class="form-card" id="form-card">
+        <div class="form-head">
+          <h2>Find Out if You Qualify</h2>
+          <p>Answer a few questions. Takes under 60 seconds. Private.</p>
+        </div>
+        <div class="form-body">
+
+          <form id="intake-form" novalidate>
+
+            <!-- Q1 -->
+            <div class="q-block">
+              <h3 class="q-title"><span class="q-num">1</span> Did the incident occur during an Uber or Lyft ride?</h3>
+              <div class="options options-grid" data-name="q1">
+                <button type="button" class="opt" data-value="uber"><span class="dot"></span><span class="opt-label">Yes — Uber</span></button>
+                <button type="button" class="opt" data-value="lyft"><span class="dot"></span><span class="opt-label">Yes — Lyft</span></button>
+                <button type="button" class="opt" data-value="other"><span class="dot"></span><span class="opt-label">Yes — another rideshare</span></button>
+                <button type="button" class="opt" data-value="no"><span class="dot"></span><span class="opt-label">No</span></button>
+              </div>
+            </div>
+
+            <!-- Q2 -->
+            <div class="q-block">
+              <h3 class="q-title"><span class="q-num">2</span> What best describes what happened?</h3>
+              <div class="field">
+                <select id="q2" name="q2">
+                  <option value="">Select one…</option>
+                  <option>Unwanted touching</option>
+                  <option>Sexual assault</option>
+                  <option>Physical assault</option>
+                  <option>Verbal harassment</option>
+                  <option>Kidnapping / unlawful detention</option>
+                  <option>Indecent exposure</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Q3 -->
+            <div class="q-block">
+              <h3 class="q-title"><span class="q-num">3</span> When did this happen?</h3>
+              <div class="options options-grid" data-name="q3">
+                <button type="button" class="opt" data-value="lt1"><span class="dot"></span><span class="opt-label">Within the last year</span></button>
+                <button type="button" class="opt" data-value="1-5"><span class="dot"></span><span class="opt-label">1 – 5 years ago</span></button>
+                <button type="button" class="opt" data-value="5plus"><span class="dot"></span><span class="opt-label">More than 5 years ago</span></button>
+              </div>
+            </div>
+
+            <!-- Q4 -->
+            <div class="q-block">
+              <h3 class="q-title"><span class="q-num">4</span> Have you retained an attorney for this matter?</h3>
+              <div class="options options-grid" data-name="q4">
+                <button type="button" class="opt" data-value="no"><span class="dot"></span><span class="opt-label">No, I have not</span></button>
+                <button type="button" class="opt" data-value="yes"><span class="dot"></span><span class="opt-label">Yes, I already have one</span></button>
+              </div>
+            </div>
+
+            <!-- Q5 -->
+            <div class="q-block">
+              <h3 class="q-title"><span class="q-num">5</span> A couple more details</h3>
+              <div class="field">
+                <label for="q5a">Do you have supporting evidence? (Texts, receipts, reports, etc.)</label>
+                <select id="q5a" name="q5a">
+                  <option value="">Select one…</option>
+                  <option>Yes, I have documentation</option>
+                  <option>Some — I can gather more</option>
+                  <option>No documentation</option>
+                  <option>I'm not sure</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="q5b">Did you report the incident?</label>
+                <select id="q5b" name="q5b">
+                  <option value="">Select one…</option>
+                  <option>Reported to police</option>
+                  <option>Reported to Uber/Lyft</option>
+                  <option>Reported to both</option>
+                  <option>Did not report</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Q6 Contact -->
+            <div class="q-block">
+              <h3 class="q-title"><span class="q-num">6</span> Where can our team reach you?</h3>
+              <div class="row-2">
+                <div class="field"><label for="first">First name</label><input id="first" name="first" type="text" autocomplete="given-name" required></div>
+                <div class="field"><label for="last">Last name</label><input id="last" name="last" type="text" autocomplete="family-name" required></div>
+              </div>
+              <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+              <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="numeric" placeholder="(555) 123-4567" required></div>
+              <div class="row-2">
+                <div class="field"><label for="state">State</label><select id="state" name="state" required><option value="">Select state…</option></select></div>
+                <div class="field"><label for="zip">ZIP</label><input id="zip" name="zip" type="text" inputmode="numeric" maxlength="5" autocomplete="postal-code" required></div>
+              </div>
+              <div class="field"><label for="notes">Anything else you'd like us to know? (Optional)</label><textarea id="notes" name="notes" rows="3"></textarea></div>
+
+              <input type="hidden" id="leadid_token" name="universal_leadid" value="">
+              <input type="hidden" name="xxTrustedFormCertUrl" id="xxTrustedFormCertUrl" value="">
+              <input type="hidden" name="utm_source" id="utm_source">
+              <input type="hidden" name="utm_medium" id="utm_medium">
+              <input type="hidden" name="utm_campaign" id="utm_campaign">
+              <input type="hidden" name="utm_content" id="utm_content">
+              <input type="hidden" name="utm_term" id="utm_term">
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="submit-btn">Do I Qualify ➔</button>
+            <p class="tcpa">
+              By clicking "Do I Qualify" and submitting my request, I confirm that I have read and agree to the <a href="#">privacy policy</a> and consent to receive emails, phone calls, and/or text messages from LegalAdviceWorks and its network of lawyers and advocates at any telephone number or email address provided, including my wireless number. Communications may be generated using an autodialer and may contain pre-recorded messages. Consent is not required for services. This authorization overrides any previous Do Not Call registry registrations.
+            </p>
+
+            <div class="thank-you" id="thank-you" hidden>
+              <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></div>
+              <h3>Your request has been received.</h3>
+              <p>A member of our intake team will contact you within one business day. Your information is private and handled with care.</p>
+              <p style="font-size:13px">If urgent, call <a href="tel:+18885550199" style="color:var(--accent);font-weight:600">(888) 555-0199</a>.</p>
+            </div>
+
+          </form>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats" aria-label="Key figures">
+  <div class="wrap">
+    <div class="grid">
+      <div class="stat">
+        <div class="stat-num">6,000<span class="sym">+</span></div>
+        <div class="stat-lbl">Reported Incidents (Uber & Lyft, US)</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><span class="sym">$</span>0</div>
+        <div class="stat-lbl">Upfront Cost to You</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">100<span class="sym">%</span></div>
+        <div class="stat-lbl">Confidential Case Review</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRESS ============ -->
+<section class="press wrap" aria-label="Featured in">
+  <div class="kicker">Featured in legal &amp; national publications</div>
+  <div class="press-row">
+    <span class="press-name">The&nbsp;Legal&nbsp;Ledger</span>
+    <span class="press-name">National Law Review</span>
+    <span class="press-name">JurisDaily</span>
+    <span class="press-name">Tort Report</span>
+    <span class="press-name">Advocate Weekly</span>
+  </div>
+  <p class="press-note">Publications shown are illustrative examples of coverage on rideshare litigation.</p>
+</section>
+
+<!-- ============ PROCESS / REASSURANCE ============ -->
+<section class="section reassure" id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow-dark">Why Survivors Choose Us</span>
+      <h2>Private. Compassionate. No obligation.</h2>
+      <p>A careful, trauma-informed review of your case — with no cost, no pressure, and no commitment.</p>
+    </div>
+    <div class="reassure-grid">
+      <div class="reassure-card">
+        <div class="ico">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Confidential review</h3>
+        <p>Your information stays between you and our intake team. We never share details without your explicit permission.</p>
+      </div>
+      <div class="reassure-card">
+        <div class="ico">
+          <svg viewBox="0 0 24 24"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <h3>Fast response</h3>
+        <p>An attorney contact will reach out within one business day. You choose when and how we follow up.</p>
+      </div>
+      <div class="reassure-card">
+        <div class="ico">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-3-3.87"/><path d="M4 21v-2a4 4 0 0 1 3-3.87"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h3>Trauma-informed</h3>
+        <p>Our intake staff are trained to handle sensitive conversations with care and without judgment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY YOU QUALIFY ============ -->
+<section class="section why">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow-dark">Why You May Qualify</span>
+      <h2>Rideshare companies can be held accountable.</h2>
+      <p>Recent court rulings have expanded the responsibility of rideshare platforms for passenger safety.</p>
+    </div>
+    <div class="reassure-grid">
+      <div class="reassure-card">
+        <div class="ico">
+          <svg viewBox="0 0 24 24"><path d="M3 13h2l2-7h10l2 7h2"/><path d="M5 13v6h14v-6"/><circle cx="8" cy="17" r="1.5"/><circle cx="16" cy="17" r="1.5"/></svg>
+        </div>
+        <h3>Driver background screening</h3>
+        <p>Survivors have alleged that screening processes failed to flag drivers with histories of violence or misconduct.</p>
+      </div>
+      <div class="reassure-card">
+        <div class="ico">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 10h16"/><path d="M10 20V10"/></svg>
+        </div>
+        <h3>In-app safety failures</h3>
+        <p>Reports of inadequate response to complaints, or the reassigning of flagged drivers, are central to many cases.</p>
+      </div>
+      <div class="reassure-card">
+        <div class="ico">
+          <svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        </div>
+        <h3>Multi-district litigation</h3>
+        <p>Cases are being consolidated in MDL proceedings, offering a stronger collective path to accountability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BAND ============ -->
+<section class="ctaband">
+  <div class="ctaband-inner wrap">
+    <h2>You pay nothing <em>unless you win.</em></h2>
+    <p>Every case is reviewed at no cost to you. No retainer, no hourly fees, no obligation to move forward.</p>
+    <a href="#hero" class="btn btn-primary" style="background:var(--accent);color:#0b1220;">Start My Free Review ➔</a>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section how">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow-dark">How It Works</span>
+      <h2>Three steps. One business day.</h2>
+    </div>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="how-num">1</div>
+        <div>
+          <h3>Complete your review</h3>
+          <p>Answer a short set of questions about your experience. Takes under 60 seconds. Fully private.</p>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">2</div>
+        <div>
+          <h3>Get matched</h3>
+          <p>Our team matches you with attorneys in our network who handle rideshare assault claims.</p>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">3</div>
+        <div>
+          <h3>Pursue justice</h3>
+          <p>Your matched attorney explains next steps. You decide if and when to move forward — no pressure.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section faq">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow-dark">Common Questions</span>
+      <h2>What to know before you file.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">
+          Does it cost anything to have my case reviewed?
+          <svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-a"><p>No. Case reviews are free and confidential. If your case is accepted, attorneys in our network work on a contingency basis — no fees unless your case is won.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Do I need a police report to file?
+          <svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-a"><p>Not necessarily. Many survivors never filed a report, and cases can still move forward. Our intake team will help you understand what documentation, if any, could strengthen your case.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          How long do I have to file a claim?
+          <svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-a"><p>Statutes of limitation vary by state and by the nature of the claim. Some deadlines are as short as two years. Reviewing your situation sooner rather than later preserves your options.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          Will my information stay private?
+          <svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-a"><p>Yes. Details you share during intake are used only to evaluate your case and match you with an attorney. We do not share personally identifying information with third parties without your consent.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          What kinds of damages might be recoverable?
+          <svg class="plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-a"><p>Depending on the case, potential damages may include medical and therapy costs, lost earnings, pain and suffering, and punitive damages. An attorney will explain what applies in your situation.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="flinks">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Do Not Sell My Info</a>
+      <a href="#">Contact</a>
+    </div>
+    <p class="disclaimer">
+      <strong>Attorney Advertising.</strong> This website is a group advertisement and is not a law firm or referral service. Services are not available in all states. The choice of a lawyer is an important decision and should not be based solely on advertisements. Prior results do not guarantee a similar outcome. Submitting information on this site does not create an attorney-client relationship.
+    </p>
+    <p class="copy">© <span id="year"></span> LegalAdviceWorks. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Mobile sticky CTA -->
+<div class="sticky-cta" id="sticky-cta" aria-hidden="true">
+  <div class="stxt"><b>Free confidential review.</b><br/>See if you qualify — under 60 seconds.</div>
+  <a href="#hero" class="btn btn-primary" style="width:auto">Start ➔</a>
+</div>
+
+<!-- Tweaks UI -->
+<div class="tweaks-btn" id="tweaks-btn"><button id="tweaks-toggle">⚙ Tweaks</button></div>
+<div class="tweaks-panel" id="tweaks-panel" role="dialog" aria-label="Tweaks">
+  <button class="close" id="tweaks-close" aria-label="Close">×</button>
+  <h4>Tweaks</h4>
+  <div class="tweak">
+    <label>Accent</label>
+    <div class="swatches" id="tweak-accent"></div>
+  </div>
+  <div class="tweak">
+    <label>Hero image</label>
+    <div class="seg" id="tweak-hero">
+      <button data-v="0">City dusk</button>
+      <button data-v="1">Road</button>
+      <button data-v="2">Rain</button>
+    </div>
+  </div>
+  <div class="tweak">
+    <label>Headline tone</label>
+    <div class="seg" id="tweak-tone">
+      <button data-v="0">Empowering</button>
+      <button data-v="1">Factual</button>
+      <button data-v="2">Direct</button>
+    </div>
+  </div>
+  <div class="tweak">
+    <label>Form card</label>
+    <div class="seg" id="tweak-formcard">
+      <button data-v="0">Light</button>
+      <button data-v="1">Dark</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============ HERO IMAGES (Unsplash) ============ */
+const HERO_IMAGES = [
+  "assets/hero-1.jpg", // City dusk
+  "assets/hero-2.jpg", // Empty road / night
+  "assets/hero-3.jpg"  // Rain / window
+];
+
+const HEADLINES = [
+  { // empowering
+    desktop: 'If you were harmed during a rideshare trip, your case <em>deserves a hearing.</em>',
+    mobile:  'You deserve to be <em>heard.</em>',
+    sub:     'Free, private case review with attorneys handling rideshare assault claims against Uber and Lyft. No fees unless your case is won.'
+  },
+  { // factual
+    desktop: 'Confidential legal review for <em>rideshare survivors.</em>',
+    mobile:  'Confidential <em>legal review.</em>',
+    sub:     'Attorneys handling claims against Uber, Lyft, and other rideshare platforms. Free, private evaluation — no obligation.'
+  },
+  { // direct
+    desktop: 'See if you qualify for <em>compensation</em> after a rideshare incident.',
+    mobile:  'See if you <em>qualify.</em>',
+    sub:     'You may be entitled to compensation. Find out in under 60 seconds — free and confidential.'
+  }
+];
+
+const ACCENT_OPTIONS = [
+  { key: '#b8963e', label: 'Gold' },
+  { key: '#8a4b3a', label: 'Rust' },
+  { key: '#3a5a5a', label: 'Teal' },
+  { key: '#6b4e9c', label: 'Plum' }
+];
+
+/* ============ TWEAKS STATE ============ */
+let state = Object.assign({}, TWEAK_DEFAULTS);
+
+function applyTweaks(){
+  const root = document.documentElement;
+  root.style.setProperty('--accent', state.accent);
+  // derive accent-2 and accent-soft from accent
+  root.style.setProperty('--accent-2', shade(state.accent, -.18));
+  root.style.setProperty('--accent-soft', tint(state.accent, .85));
+
+  // hero images
+  const url = HERO_IMAGES[state.heroImageIndex] || HERO_IMAGES[0];
+  document.getElementById('hero-media').style.backgroundImage = `url("${url}")`;
+  document.getElementById('mobile-mimg').style.backgroundImage = `url("${url}")`;
+
+  // headline
+  const h = HEADLINES[state.headlineToneIndex] || HEADLINES[0];
+  document.getElementById('desktop-headline').innerHTML = h.desktop;
+  document.getElementById('mobile-headline').innerHTML = h.mobile;
+  document.getElementById('desktop-sub').innerHTML = h.sub;
+
+  // form card light/dark
+  const card = document.getElementById('form-card');
+  if (state.formCardDark){
+    card.style.background = '#0f172a';
+    card.style.color = '#f2ece0';
+    card.querySelectorAll('.opt').forEach(o => {
+      o.style.background = 'rgba(255,255,255,.04)';
+      o.style.color = '#f2ece0';
+      o.style.borderColor = 'rgba(255,255,255,.16)';
+    });
+    card.querySelectorAll('.field input, .field select, .field textarea').forEach(i => {
+      i.style.background = 'rgba(255,255,255,.05)';
+      i.style.color = '#f2ece0';
+      i.style.borderColor = 'rgba(255,255,255,.18)';
+    });
+    card.querySelectorAll('.q-title').forEach(t => t.style.color = '#f8f1df');
+    card.querySelectorAll('.q-help, .tcpa, .field label, .back, .progress-label').forEach(t => t.style.color = 'rgba(242,236,224,.7)');
+  } else {
+    card.removeAttribute('style');
+    card.querySelectorAll('[style]').forEach(el => el.removeAttribute('style'));
+    // re-apply some
+  }
+
+  // sync tweak UI
+  document.querySelectorAll('#tweak-accent .sw').forEach(sw => sw.classList.toggle('active', sw.dataset.v === state.accent));
+  document.querySelectorAll('#tweak-hero button').forEach(b => b.classList.toggle('active', Number(b.dataset.v) === state.heroImageIndex));
+  document.querySelectorAll('#tweak-tone button').forEach(b => b.classList.toggle('active', Number(b.dataset.v) === state.headlineToneIndex));
+  document.querySelectorAll('#tweak-formcard button').forEach(b => b.classList.toggle('active', Number(b.dataset.v) === (state.formCardDark?1:0)));
+}
+
+/* color helpers */
+function hexToRgb(h){ h=h.replace('#',''); if(h.length===3) h=h.split('').map(c=>c+c).join(''); const n=parseInt(h,16); return {r:(n>>16)&255,g:(n>>8)&255,b:n&255}; }
+function rgbToHex(r,g,b){ const x=v=>('0'+Math.round(Math.max(0,Math.min(255,v))).toString(16)).slice(-2); return '#'+x(r)+x(g)+x(b); }
+function shade(hex,amt){ const {r,g,b}=hexToRgb(hex); const f = amt<0?(1+amt):1; const o = amt>0?amt*255:0; return rgbToHex(r*f+o,g*f+o,b*f+o); }
+function tint(hex,amt){ const {r,g,b}=hexToRgb(hex); return rgbToHex(r+(255-r)*amt, g+(255-g)*amt, b+(255-b)*amt);}
+
+/* ============ STATE MGMT ============ */
+function sendEdits(edits){
+  try { window.parent.postMessage({type:'__edit_mode_set_keys', edits}, '*'); } catch(e){}
+}
+
+/* ============ FORM LOGIC (single-page) ============ */
+const answers = {};
+
+/* option groups — just toggle selected, no auto-advance */
+document.querySelectorAll('#intake-form .options').forEach(group => {
+  const name = group.dataset.name;
+  group.querySelectorAll('.opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      group.querySelectorAll('.opt').forEach(o => o.classList.remove('selected'));
+      btn.classList.add('selected');
+      answers[name] = btn.dataset.value;
+    });
+  });
+});
+
+/* phone formatting */
+const phoneInput = document.getElementById('phone');
+phoneInput.addEventListener('input', e => {
+  let v = e.target.value.replace(/\D/g,'').slice(0,10);
+  if (v.length > 6) v = `(${v.slice(0,3)}) ${v.slice(3,6)}-${v.slice(6)}`;
+  else if (v.length > 3) v = `(${v.slice(0,3)}) ${v.slice(3)}`;
+  else if (v.length > 0) v = `(${v}`;
+  e.target.value = v;
+});
+document.getElementById('zip').addEventListener('input', e => {
+  e.target.value = e.target.value.replace(/\D/g,'').slice(0,5);
+});
+
+/* states */
+const STATES = ["AL","AK","AZ","AR","CA","CO","CT","DE","DC","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"];
+const stateSel = document.getElementById('state');
+STATES.forEach(s => { const o=document.createElement('option'); o.value=s; o.textContent=s; stateSel.appendChild(o); });
+
+/* UTM capture */
+try {
+  const params = new URLSearchParams(location.search);
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(f => {
+    const el = document.getElementById(f);
+    if (el) el.value = params.get(f) || '';
+  });
+} catch(e){}
+
+/* submit */
+document.getElementById('intake-form').addEventListener('submit', async e => {
+  e.preventDefault();
+  const btn = document.getElementById('submit-btn');
+  const required = ['first','last','email','phone','state','zip'];
+  for (const id of required){
+    const el = document.getElementById(id);
+    if (!el.value.trim()) { el.focus(); el.style.borderColor = '#c44'; return; }
+  }
+  if (!answers.q1){
+    const el = document.querySelector('[data-name="q1"]');
+    el.scrollIntoView({block:'center', behavior:'smooth'});
+    el.style.outline = '2px solid #c44'; el.style.outlineOffset='6px';
+    setTimeout(()=>{el.style.outline='none';}, 2000);
+    return;
+  }
+  btn.disabled = true; btn.textContent = 'Submitting…';
+  const payload = Object.assign({}, answers);
+  new FormData(e.target).forEach((v,k) => payload[k]=v);
+  try {
+    // await fetch('<webhook_url>', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+    console.log('[Mock submit]', payload);
+    await new Promise(r => setTimeout(r, 600));
+  } catch(err){}
+  // show thank-you, hide form fields
+  document.querySelectorAll('#intake-form .q-block, #intake-form .tcpa, #submit-btn').forEach(el => el.style.display='none');
+  document.getElementById('thank-you').hidden = false;
+  window.scrollTo({top: document.getElementById('form-card').offsetTop - 20, behavior:'smooth'});
+});
+
+/* FAQ accordion (single open) */
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.querySelector('.faq-q').addEventListener('click', () => {
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!open) item.classList.add('open');
+  });
+});
+
+/* sticky CTA */
+const sticky = document.getElementById('sticky-cta');
+const hero = document.getElementById('hero');
+function onScroll(){
+  const heroBottom = hero.getBoundingClientRect().bottom;
+  if (heroBottom < 80) sticky.classList.add('show'); else sticky.classList.remove('show');
+}
+window.addEventListener('scroll', onScroll, {passive:true});
+
+/* year */
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ============ TWEAKS UI ============ */
+(function setupTweaks(){
+  // build accent swatches
+  const sw = document.getElementById('tweak-accent');
+  ACCENT_OPTIONS.forEach(o => {
+    const el = document.createElement('button');
+    el.className = 'sw'; el.type='button';
+    el.style.background = o.key; el.dataset.v = o.key; el.title = o.label;
+    el.addEventListener('click', () => { state.accent = o.key; applyTweaks(); sendEdits({accent: o.key}); });
+    sw.appendChild(el);
+  });
+  document.querySelectorAll('#tweak-hero button').forEach(b => {
+    b.addEventListener('click', () => { state.heroImageIndex = Number(b.dataset.v); applyTweaks(); sendEdits({heroImageIndex: state.heroImageIndex}); });
+  });
+  document.querySelectorAll('#tweak-tone button').forEach(b => {
+    b.addEventListener('click', () => { state.headlineToneIndex = Number(b.dataset.v); applyTweaks(); sendEdits({headlineToneIndex: state.headlineToneIndex}); });
+  });
+  document.querySelectorAll('#tweak-formcard button').forEach(b => {
+    b.addEventListener('click', () => { state.formCardDark = b.dataset.v === '1'; applyTweaks(); sendEdits({formCardDark: state.formCardDark}); });
+  });
+
+  // toggle
+  const btn = document.getElementById('tweaks-btn');
+  const panel = document.getElementById('tweaks-panel');
+  document.getElementById('tweaks-toggle').addEventListener('click', () => panel.classList.toggle('active'));
+  document.getElementById('tweaks-close').addEventListener('click', () => panel.classList.remove('active'));
+
+  // parent protocol
+  window.addEventListener('message', (ev) => {
+    if (!ev.data) return;
+    if (ev.data.type === '__activate_edit_mode') btn.classList.add('active');
+    if (ev.data.type === '__deactivate_edit_mode'){ btn.classList.remove('active'); panel.classList.remove('active'); }
+  });
+  try { window.parent.postMessage({type:'__edit_mode_available'}, '*'); } catch(e){}
+})();
+
+// initial apply
+applyTweaks();
+</script>
+</body>
+</html>
