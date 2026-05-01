@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="en">
+<head>
+<style data-omelette-injected>html,body{background:transparent}</style><script data-omelette-injected>(()=>{var j=["https://claude.ai","https://preview.claude.ai","https://eap-omelette.claude.ai"];var x=true;var S=30000;var f=3000;document.addEventListener("DOMContentLoaded",()=>{const H=window.Babel;const G="om-src-id";if(H&&H.registerPlugin&&!(H.availablePlugins&&H.availablePlugins[G])){H.registerPlugin(G,({types:Y})=>({visitor:{JSXOpeningElement(U,Q){const J=U.node;if(J.name&&J.name.type==="JSXMemberExpression")return;for(let V=0;V<J.attributes.length;V++){const L=J.attributes[V];if(L.type==="JSXAttribute"&&L.name&&L.name.name==="data-om-id")return}const W=Q.file&&Q.file.opts&&Q.file.opts.filename||"?";const Z=J.loc&&J.loc.start;const z=`jsx:${W}:${J.start??0}:${Z?Z.line:0}:${Z?Z.column+1:0}`;J.attributes.push(Y.jsxAttribute(Y.jsxIdentifier("data-om-id"),Y.stringLiteral(z)))}}}))}const k="om-text-extract";let A=false;if(x&&H&&H.registerPlugin&&!(H.availablePlugins&&H.availablePlugins[k])){const Y=window.React;if(Y&&Y.useSyncExternalStore&&Y.createElement){A=true;const U={};const Q=new Set;let J=0;window.__omTextO=U;window.__omTextSet=(z)=>{for(const V in z){const L=z[V];if(L==null)delete U[V];else U[V]=L}J++;Q.forEach((V)=>V())};const W=(z)=>{Q.add(z);return()=>Q.delete(z)};const Z=()=>J;window.__OmT=function z(V){Y.useSyncExternalStore(W,Z,Z);return Y.createElement("span",{"data-om-text":V.i,className:"__om-t"},V.i in U?U[V.i]:V.children)};H.registerPlugin(k,({types:z})=>{const V={style:1,script:1,noscript:1,textarea:1,title:1,option:1,text:1,tspan:1,textPath:1};const L={placeholder:1,alt:1,title:1,label:1,"aria-label":1,"aria-description":1,"aria-placeholder":1};const _=($,C)=>z.logicalExpression("??",z.memberExpression(z.logicalExpression("||",z.memberExpression(z.identifier("window"),z.identifier("__omTextO")),z.objectExpression([])),z.stringLiteral($),true),C);const E=($)=>$.file&&$.file.opts&&$.file.opts.filename||"?";const B=($)=>$.file&&$.file.code||"";const b=($,C)=>{const X=(F)=>F&&F.start!=null&&F.end!=null&&(F.type==="StringLiteral"||F.type==="TemplateLiteral"&&F.expressions.length===0)?[F.start,F.end]:null;const N=X(C);if(N)return N;if(C&&C.type==="Identifier"){const F=$.scope.getBinding(C.name);if(F&&F.constant&&F.path.node.type==="VariableDeclarator"){return X(F.path.node.init)}}return null};const m=($,C,X)=>{const N=$.node;let F=false;const w=(K,q)=>{F=true;return z.jsxElement(z.jsxOpeningElement(z.jsxIdentifier("__OmT"),[z.jsxAttribute(z.jsxIdentifier("i"),z.stringLiteral(K))],false),z.jsxClosingElement(z.jsxIdentifier("__OmT")),[q],false)};const D=N.children.map((K)=>{if(K.type==="JSXText"){if(K.start==null||K.end==null)return K;const q=X.slice(K.start,K.end);const M=q.length-q.trimStart().length;const R=q.length-q.trimEnd().length;if(M+R>=q.length)return K;return w(`txt:${C}:${K.start+M}:${K.end-R}`,K)}if(K.type==="JSXExpressionContainer"){const q=b($,K.expression);if(q)return w(`str:${C}:${q[0]}:${q[1]}`,K)}return K});if(F)N.children=D};return{visitor:{JSXOpeningElement($,C){const X=$.node;const N=E(C);const F={};for(let w=0;w<X.attributes.length;w++){const D=X.attributes[w];if(D.type!=="JSXAttribute"||!D.name)continue;const K=D.name.name;if(!L[K])continue;if(!D.value||D.value.type!=="StringLiteral")continue;if(D.value.start==null||D.value.end==null)continue;const q=`txt:${N}:${D.value.start}:${D.value.end}`;F[K]=q;D.value=z.jsxExpressionContainer(_(q,z.stringLiteral(D.value.value)))}if(Object.keys(F).length){X.attributes.push(z.jsxAttribute(z.jsxIdentifier("data-om-text-attrs"),z.stringLiteral(JSON.stringify(F))))}},JSXElement($,C){const X=$.node.openingElement;const N=X&&X.name&&X.name.name;if(N==="__OmT")return;if(typeof N==="string"&&V[N])return;m($,E(C),B(C))},JSXFragment($,C){m($,E(C),B(C))}}}})}}const u=A?["transform-react-jsx-source",G,k]:["transform-react-jsx-source",G];document.querySelectorAll('script[type="text/babel"],script[type="text/jsx"]').forEach((Y,U)=>{const Q=Y.getAttribute("data-plugins")||"";const J=u.filter((W)=>Q.indexOf(W)<0);if(J.length){Y.setAttribute("data-plugins",Q?`${Q},${J.join(",")}`:J.join(","))}if(!Y.hasAttribute("data-filename")){Y.setAttribute("data-filename",Y.getAttribute("src")||`inline-${U}`)}})});var y=window.parent;if(y&&y!==window){const H=(Q,J)=>{try{y.postMessage({__omelette_log:true,type:Q,data:J},"*")}catch{}};["log","warn","error"].forEach((Q)=>{const J=console[Q];console[Q]=(...W)=>{const Z=W.map((z)=>{try{return typeof z==="object"?JSON.stringify(z):String(z)}catch{try{return String(z)}catch{return"[unstringifiable]"}}}).join(" ");H(Q,Z);J.apply(console,W)}});window.addEventListener("error",(Q)=>{const J=Q.target;if(J&&J!==window&&J.tagName){const W=J.src||J.href||"";H("resource_error",`${J.tagName} failed to load: ${W}`)}else{H("error",`${Q.message||"Unknown error"} at ${Q.filename||"?"}:${Q.lineno||0}:${Q.colno||0}`)}},true);window.addEventListener("unhandledrejection",(Q)=>{const J=Q.reason;const W=J instanceof Error?`${J.message} ${J.stack}`:String(J);H("error",`Unhandled rejection: ${W}`)});const G=()=>{try{y.postMessage({type:"omelette:height",height:document.documentElement.scrollHeight},"*")}catch{}};if(document.readyState==="complete")G();else window.addEventListener("load",G);if(window.ResizeObserver)new ResizeObserver(G).observe(document.documentElement);const k={};let A=0;window.claude={complete(Q){return new Promise((J,W)=>{if(!j.length){W(new Error("claude.complete: no parent origin"));return}const Z=`c${++A}`;const z=()=>setTimeout(()=>{delete k[Z];W(new Error(`claude.complete: no data for ${S/1000}s`))},S);const V=z();k[Z]={resolve:J,reject:W,text:"",t:V,arm:z};try{for(const L of j){y.postMessage({__om_api:true,id:Z,body:Q},L)}}catch(L){clearTimeout(V);delete k[Z];W(L)}})}};const u={};let Y=0;window.omelette={writeFile:(Q,J)=>new Promise((W,Z)=>{if(!j.length){W();return}const z=`f${++Y}`;const V=setTimeout(()=>{delete u[z];W()},f);u[z]={resolve:W,reject:Z,t:V};try{for(const L of j){y.postMessage({__om_file:true,id:z,op:"write",path:Q,content:J},L)}}catch{clearTimeout(V);delete u[z];W()}})};const U=(Q)=>{try{return JSON.stringify(Q)}catch{return JSON.stringify(String(Q))}};window.addEventListener("message",(Q)=>{if(j.indexOf(Q.origin)<0)return;if(Q.source!==y)return;const J=Q.data;if(!J)return;if(J.__om_file_r){const z=u[J.id];if(!z)return;clearTimeout(z.t);delete u[J.id];if(J.ok)z.resolve();else z.reject(new Error(J.error||"write failed"));return}if(J.__om_api_r){const z=k[J.id];if(!z)return;if(J.error!=null){clearTimeout(z.t);delete k[J.id];z.reject(new Error(J.error));return}if(J.chunk!=null){clearTimeout(z.t);z.t=z.arm();z.text+=J.chunk;return}if(J.done){clearTimeout(z.t);delete k[J.id];z.resolve(J.text!=null?J.text:z.text);return}return}if(!J.__om_eval)return;const W=J;const Z=(z)=>{Q.source.postMessage({...z,__om_eval_r:1,id:W.id},Q.origin)};try{const z=(0,eval)(W.code);if(z&&typeof z.then==="function"){z.then((V)=>Z({ok:1,v:U(V)}),(V)=>Z({ok:0,e:String(V)}))}else{Z({ok:1,v:U(z)})}}catch(z){Z({ok:0,e:String(z)})}})}})();
+</script>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Meningioma Survey & Resource Center — Halden &amp; Marsh, LLP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,600;0,700;0,800;1,500;1,600&display=swap" rel="stylesheet">
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<style>
+  :root{
+    --teal-50:#e9f7f7;
+    --teal-100:#cfeaea;
+    --teal-200:#a8d8d8;
+    --teal-300:#7cc1c1;
+    --teal-400:#5fb0b2;
+    --teal-500:#48a0a3;
+    --aqua-bg:#bfe1e0;
+    --aqua-bg-2:#a9d4d3;
+    --red:#e21f26;
+    --red-dark:#bf161c;
+    --yellow:#f4c021;
+    --green:#2bb148;
+    --green-dark:#1f9c3a;
+    --lavender:#dcd6ec;
+    --lavender-2:#cfc7e6;
+    --mint:#cfeee2;
+    --ink:#0f1622;
+    --ink-2:#1a2332;
+    --muted:#5b6470;
+    --hair:#d9dde2;
+    --footer:#3f4046;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#fff;color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  button{font-family:inherit}
+
+  /* TOP BAR */
+  .topbar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 28px;background:#fff;
+  }
+  .brand{display:flex;align-items:center;gap:10px;color:#1f6f95;font-weight:800;letter-spacing:-0.01em}
+  .brand-mark{width:36px;height:36px;flex:0 0 36px}
+  .brand-name{line-height:1}
+  .brand-name strong{font-size:22px;letter-spacing:-0.02em}
+  .brand-name span{font-size:11px;color:#6a7a86;font-weight:600;letter-spacing:0.04em;text-transform:uppercase}
+  .urgency{color:var(--red);font-weight:800;font-size:14px;letter-spacing:0.06em;text-transform:uppercase}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(1200px 500px at 75% 35%, rgba(255,255,255,.55), transparent 60%),
+      linear-gradient(180deg, var(--aqua-bg) 0%, var(--aqua-bg-2) 100%);
+    padding:28px 28px 40px;
+    overflow:hidden;
+  }
+  .hero::before{
+    /* subtle medical equipment glow on the right */
+    content:"";position:absolute;inset:0;
+    background-image:
+      radial-gradient(380px 380px at 88% 55%, rgba(255,255,255,.35), transparent 70%),
+      radial-gradient(260px 260px at 70% 80%, rgba(255,255,255,.25), transparent 70%);
+    pointer-events:none;
+  }
+  .hero-grid{
+    position:relative;z-index:2;
+    display:grid;grid-template-columns: 1fr 460px;gap:28px;
+    max-width:1180px;margin:0 auto;align-items:start;
+  }
+  /* glassy left card */
+  .pitch{
+    background:rgba(178,217,217,.55);
+    backdrop-filter: blur(2px);
+    border:1px solid rgba(255,255,255,.4);
+    border-radius:6px;
+    padding:26px 28px 22px;
+    color:#0f1622;
+    box-shadow: 0 1px 0 rgba(255,255,255,.6) inset, 0 8px 24px rgba(15,40,60,.08);
+    max-width:640px;
+    margin-top:8px;
+  }
+  .pitch h1{
+    font-family:'Source Serif 4',Georgia,serif;
+    font-weight:800;
+    color:var(--red);
+    font-size:34px;line-height:1.18;letter-spacing:-0.005em;
+    margin:0 0 14px;
+  }
+  .pitch h1 em{font-style:normal;font-weight:800;color:var(--red)}
+  .pitch h1 .u{text-decoration:none}
+  .pitch .lede{
+    font-size:15px;font-weight:700;color:#0f1622;margin:0 0 8px;
+  }
+  .pitch .payout{
+    font-size:14px;color:#0f1622;font-weight:600;margin:0 0 10px;
+  }
+  .pitch .payout em{font-style:italic;font-weight:500}
+  .pitch .footnote{
+    font-size:10.5px;line-height:1.4;color:#1f3340;opacity:.85;margin:0;
+  }
+  .pitch .footnote a{color:#1f3340;text-decoration:underline}
+
+  /* form card right */
+  .form-card{
+    background:#fff;border:3px solid var(--yellow);border-radius:6px;
+    box-shadow:0 14px 40px rgba(15,40,60,.18);
+    overflow:hidden;
+    width:100%;
+  }
+  .form-head{
+    background:var(--yellow);
+    text-align:center;padding:10px 14px 12px;
+  }
+  .form-head h2{
+    margin:0;font-family:'Source Serif 4',serif;font-weight:800;font-size:20px;color:#0f1622;
+  }
+  .form-head p{
+    margin:2px 0 0;font-size:12.5px;font-weight:700;color:#0f1622;text-decoration:underline;
+  }
+  .form-body{padding:14px 16px 16px;background:#fff}
+  .progress{
+    display:flex;gap:4px;margin-bottom:12px;
+  }
+  .progress span{flex:1;height:4px;background:#e6e9ed;border-radius:2px}
+  .progress span.on{background:var(--green)}
+  .field{margin-bottom:10px}
+  .field label{
+    display:block;font-size:13px;color:#0f1622;font-weight:600;margin-bottom:5px;line-height:1.35;
+  }
+  .field input, .field select, .field textarea{
+    width:100%;padding:9px 10px;font-size:14px;color:#0f1622;
+    border:1px solid #c8cdd3;border-radius:4px;background:#fff;
+    font-family:inherit;outline:none;transition:border-color .15s, box-shadow .15s;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    border-color:var(--teal-500);box-shadow:0 0 0 3px rgba(72,160,163,.18);
+  }
+  .field.err input, .field.err select, .field.err textarea{
+    border-color:var(--red);box-shadow:0 0 0 3px rgba(226,31,38,.12);
+  }
+  .field .err-msg{color:var(--red);font-size:11.5px;margin-top:3px;font-weight:600}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .submit{
+    width:100%;background:var(--green);color:#fff;border:none;border-radius:4px;
+    padding:12px 14px;font-size:16px;font-weight:800;letter-spacing:0.01em;
+    cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;
+    box-shadow:0 2px 0 var(--green-dark), 0 8px 18px rgba(43,177,72,.35);
+    transition:transform .08s ease, box-shadow .15s ease;
+  }
+  .submit:hover{transform:translateY(-1px)}
+  .submit:active{transform:translateY(1px);box-shadow:0 0 0 var(--green-dark)}
+  .trust-row{
+    display:flex;align-items:center;justify-content:center;gap:14px;
+    margin-top:12px;padding-top:10px;border-top:1px solid #eef0f3;
+  }
+  .trust-pill{
+    display:flex;align-items:center;gap:6px;font-size:11px;color:#4a5662;font-weight:600;
+  }
+  .trust-pill svg{width:14px;height:14px;color:#4a5662}
+  .consent{
+    font-size:10px;color:#5b6470;line-height:1.4;margin-top:8px;text-align:center;
+  }
+  .consent a{color:#1f6f95;text-decoration:underline}
+
+  /* PRESS STRIP */
+  .press{
+    background:#cfd2d6;color:#0f1622;
+    padding:12px 28px;display:flex;align-items:center;justify-content:center;gap:32px;
+    flex-wrap:wrap;
+  }
+  .press .label{font-weight:800;font-size:13px;letter-spacing:0.02em}
+  .press .logos{display:flex;align-items:center;gap:36px;flex-wrap:wrap}
+  .press .logo{font-weight:800;font-size:18px;color:#0f1622;letter-spacing:-0.01em;display:flex;align-items:center;gap:8px}
+  .press .logo .dot{width:14px;height:14px;border-radius:50%;background:#caa44a;display:inline-block}
+  .press .logo.serif{font-family:'Source Serif 4',serif;font-style:italic;font-weight:800}
+
+  /* INFO BLOCK (left column under pitch) */
+  .info-block{
+    background:#fff;border:1px solid #e3e7eb;border-radius:6px;
+    padding:22px 24px 20px;margin-top:18px;
+    box-shadow:0 6px 18px rgba(15,40,60,.06);
+  }
+  .info-block h3{
+    font-family:'Source Serif 4',serif;font-weight:700;font-size:18px;color:#0f1622;
+    line-height:1.4;margin:0 0 16px;text-align:center;
+  }
+  .info-block h3 .hl{text-decoration:underline;font-weight:800}
+  .info-photo{
+    width:240px;height:240px;margin:0 auto 16px;
+    border-radius:4px;overflow:hidden;background:#e9eef1;
+    box-shadow:0 6px 18px rgba(15,40,60,.1);
+  }
+  .info-block p{
+    font-size:14px;line-height:1.6;color:#1a2332;margin:0 0 12px;
+  }
+
+  /* DEPO INFO */
+  .depo{
+    background:var(--lavender);padding:38px 28px;
+  }
+  .depo-grid{
+    max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:42px;align-items:start;
+  }
+  .depo h2{
+    font-family:'Source Serif 4',serif;font-weight:800;font-size:24px;color:#0f1622;
+    text-align:center;margin:0 0 22px;grid-column:1 / -1;
+  }
+  .depo p{
+    font-size:14px;line-height:1.65;color:#1a2332;margin:0 0 12px;
+  }
+  .depo-img{
+    border-radius:4px;overflow:hidden;background:#bfb6d8;aspect-ratio:4/5;
+    box-shadow:0 10px 26px rgba(40,30,80,.18);
+  }
+
+  /* MINT CTA */
+  .mint{
+    background:var(--mint);padding:30px 28px;
+    display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;
+  }
+  .mint h3{
+    margin:0;font-family:'Source Serif 4',serif;font-style:italic;font-weight:600;font-size:22px;color:#0f1622;
+    line-height:1.3;
+  }
+  .mint h3 strong{font-style:normal;font-weight:800;text-transform:uppercase;display:block;letter-spacing:0.02em}
+  .mint .cta{
+    background:var(--green);color:#fff;border:none;border-radius:4px;
+    padding:12px 18px;font-size:14.5px;font-weight:800;cursor:pointer;
+    display:inline-flex;align-items:center;gap:8px;
+    box-shadow:0 2px 0 var(--green-dark);
+    text-decoration:none;
+  }
+  .mint .cta:hover{filter:brightness(1.03)}
+
+  /* FOOTER */
+  footer{
+    background:var(--footer);color:#e6e7ea;padding:22px 28px 26px;
+    font-size:11px;line-height:1.55;
+  }
+  .footer-inner{max-width:840px;margin:0 auto;text-align:center}
+  .footer-inner .head{font-weight:800;color:#fff;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:6px}
+  .footer-inner p{margin:0 0 10px;color:#d8d9dc}
+  .footer-links{display:flex;justify-content:center;gap:22px;margin-top:10px}
+  .footer-links a{color:#fff;text-decoration:underline;font-size:11px;font-weight:600}
+
+  /* STICKY CTA */
+  .sticky{
+    position:fixed;bottom:0;left:0;right:0;z-index:50;
+    background:var(--ink);color:#fff;padding:10px 16px;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    box-shadow:0 -6px 20px rgba(0,0,0,.18);
+    transform:translateY(100%);transition:transform .3s ease;
+  }
+  .sticky.show{transform:translateY(0)}
+  .sticky .msg{font-size:13.5px;font-weight:600}
+  .sticky .msg em{color:var(--yellow);font-style:normal;font-weight:800}
+  .sticky button{
+    background:var(--green);color:#fff;border:none;border-radius:4px;
+    padding:10px 16px;font-weight:800;font-size:13.5px;cursor:pointer;
+  }
+
+  /* CONFIRMATION */
+  .confirm{
+    text-align:center;padding:8px 4px 4px;
+  }
+  .confirm .check{
+    width:56px;height:56px;border-radius:50%;background:var(--green);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 12px;
+    color:#fff;
+  }
+  .confirm h3{
+    font-family:'Source Serif 4',serif;font-weight:800;font-size:20px;color:#0f1622;margin:0 0 6px;
+  }
+  .confirm p{font-size:13.5px;color:#384150;line-height:1.5;margin:0 0 8px}
+  .confirm .ref{
+    display:inline-block;background:#f3f5f7;border:1px dashed #b9c0c8;color:#0f1622;
+    font-family:ui-monospace,Menlo,monospace;font-size:12px;font-weight:700;
+    padding:6px 10px;border-radius:4px;
+  }
+
+  /* Responsive */
+  @media (max-width: 960px){
+    .hero-grid{grid-template-columns:1fr}
+    .form-card{order:2}
+    .left-col{order:1}
+    .pitch{max-width:100%}
+    .depo-grid{grid-template-columns:1fr;gap:22px}
+    .depo-img{max-width:320px;margin:0 auto}
+    .topbar{padding:12px 16px}
+    .urgency{font-size:12px}
+    .pitch h1{font-size:28px}
+    .info-block h3{font-size:16px}
+  }
+  @media (max-width: 520px){
+    .hero{padding:18px 14px 28px}
+    .pitch{padding:18px 18px 16px}
+    .pitch h1{font-size:24px}
+    .press{gap:14px;padding:10px 16px}
+    .press .logos{gap:18px}
+    .info-photo{width:220px;height:220px}
+    .mint h3{font-size:18px}
+  }
+</style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useMemo, useEffect, useRef } = React;
+
+    /* Brand mark — abstract brain/scan glyph */
+    const BrandMark = () => (
+      <svg className="brand-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" fill="#e8f3f8" stroke="#1f6f95" strokeWidth="1.5"/>
+        <path d="M14 13c-2 1-3 3-2.5 5.5C10.2 20 10 22 11.5 23.5 12.6 24.6 14 25 15 24.7c.3 1.4 1.6 2.3 3 2.3 1.3 0 2.5-.9 3-2.3 1 .3 2.4-.1 3.5-1.2 1.5-1.5 1.3-3.5.0-5C26 15.5 25 13 23 12c-1.6-.8-3.4-.4-3.5 1-1-1.4-3-1-5 0Z"
+              fill="#1f6f95" opacity=".25"/>
+        <path d="M14 13c-2 1-3 3-2.5 5.5C10.2 20 10 22 11.5 23.5 12.6 24.6 14 25 15 24.7c.3 1.4 1.6 2.3 3 2.3 1.3 0 2.5-.9 3-2.3 1 .3 2.4-.1 3.5-1.2 1.5-1.5 1.3-3.5.0-5C26 15.5 25 13 23 12c-1.6-.8-3.4-.4-3.5 1-1-1.4-3-1-5 0Z"
+              stroke="#1f6f95" strokeWidth="1.4" strokeLinejoin="round"/>
+        <circle cx="18" cy="19" r="1.1" fill="#1f6f95"/>
+        <circle cx="22" cy="21" r="1.1" fill="#1f6f95"/>
+      </svg>
+    );
+
+    /* Patient illustration — woman receiving an injection (placeholder SVG) */
+    const PatientPhoto = () => (
+      <svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" style={{width:'100%',height:'100%',display:'block'}} aria-label="Patient receiving care">
+        <defs>
+          <linearGradient id="bg1" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stopColor="#eef3f5"/>
+            <stop offset="1" stopColor="#d9e2e6"/>
+          </linearGradient>
+          <linearGradient id="hair1" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stopColor="#3a2a1f"/>
+            <stop offset="1" stopColor="#1f150e"/>
+          </linearGradient>
+        </defs>
+        <rect width="280" height="280" fill="url(#bg1)"/>
+        {/* shoulder/torso (peach top) */}
+        <path d="M40 280 C 60 220, 90 200, 140 200 C 200 200, 240 230, 250 280 Z" fill="#e8a791"/>
+        <path d="M120 200 C 130 195, 160 195, 175 200 L 175 215 L 120 215 Z" fill="#f0b8a3"/>
+        {/* neck */}
+        <rect x="128" y="170" width="34" height="34" rx="10" fill="#e8b9a3"/>
+        {/* face */}
+        <ellipse cx="145" cy="135" rx="42" ry="50" fill="#efc5ad"/>
+        {/* hair */}
+        <path d="M101 135 C 95 90, 130 70, 150 72 C 188 76, 198 110, 192 140 C 188 130, 182 122, 175 118 C 178 100, 160 92, 145 96 C 128 100, 118 116, 116 132 C 110 130, 104 132, 101 135 Z" fill="url(#hair1)"/>
+        <path d="M104 130 C 102 160, 110 178, 120 188 C 110 188, 100 175, 98 158 Z" fill="url(#hair1)"/>
+        {/* mask */}
+        <path d="M118 138 L 175 138 L 178 168 C 178 178, 168 184, 148 184 C 128 184, 118 178, 116 168 Z" fill="#bcdce6"/>
+        <path d="M118 138 L 175 138" stroke="#7fa9b7" strokeWidth="1.2"/>
+        <path d="M118 168 L 175 168" stroke="#7fa9b7" strokeWidth="1" opacity=".6"/>
+        <path d="M118 154 L 175 154" stroke="#7fa9b7" strokeWidth="1" opacity=".4"/>
+        {/* mask straps */}
+        <path d="M118 142 C 100 140, 96 150, 96 160" stroke="#7fa9b7" strokeWidth="1.2" fill="none"/>
+        <path d="M175 142 C 195 140, 198 150, 198 160" stroke="#7fa9b7" strokeWidth="1.2" fill="none"/>
+        {/* eyes */}
+        <ellipse cx="128" cy="128" rx="3.4" ry="2" fill="#1a1410"/>
+        <ellipse cx="160" cy="128" rx="3.4" ry="2" fill="#1a1410"/>
+        <path d="M122 120 C 126 117, 134 117, 138 120" stroke="#3a2a1f" strokeWidth="1.4" fill="none" strokeLinecap="round"/>
+        <path d="M154 120 C 158 117, 166 117, 170 120" stroke="#3a2a1f" strokeWidth="1.4" fill="none" strokeLinecap="round"/>
+        {/* gloved hand + syringe entering shoulder */}
+        <path d="M210 195 L 250 175 L 256 184 L 216 204 Z" fill="#9fd2e0"/>
+        <rect x="200" y="190" width="22" height="14" rx="3" fill="#cfe9ef"/>
+        <rect x="186" y="194" width="16" height="6" rx="2" fill="#888"/>
+        <rect x="178" y="195" width="10" height="4" fill="#666"/>
+        {/* needle */}
+        <line x1="178" y1="197" x2="170" y2="200" stroke="#333" strokeWidth="1.2"/>
+      </svg>
+    );
+
+    /* Depo vial illustration — gloved hands holding syringe */
+    const VialPhoto = () => (
+      <svg viewBox="0 0 320 400" xmlns="http://www.w3.org/2000/svg" style={{width:'100%',height:'100%',display:'block'}} aria-label="Medical professional with syringe">
+        <defs>
+          <linearGradient id="bgv" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stopColor="#f3eff7"/>
+            <stop offset="1" stopColor="#cfc7e2"/>
+          </linearGradient>
+        </defs>
+        <rect width="320" height="400" fill="url(#bgv)"/>
+        {/* glove left */}
+        <path d="M50 400 C 50 320, 80 270, 130 260 L 170 260 C 220 270, 250 320, 250 400 Z" fill="#7fb8d4"/>
+        <path d="M120 270 C 130 250, 145 244, 160 246 L 175 248 C 188 252, 196 268, 195 282 L 192 320 L 130 320 Z" fill="#9ccae0"/>
+        {/* fingers gripping */}
+        <rect x="138" y="200" width="16" height="80" rx="8" fill="#9ccae0"/>
+        <rect x="158" y="190" width="16" height="90" rx="8" fill="#9ccae0"/>
+        <rect x="178" y="200" width="16" height="80" rx="8" fill="#9ccae0"/>
+        {/* syringe vertical */}
+        <rect x="150" y="60" width="28" height="160" rx="3" fill="#fff" stroke="#a9b3bd" strokeWidth="1.2"/>
+        <rect x="150" y="60" width="28" height="160" fill="url(#liquid)"/>
+        <defs>
+          <linearGradient id="liquid" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stopColor="#ffffff" stopOpacity="0"/>
+            <stop offset=".4" stopColor="#e8eef2" stopOpacity=".7"/>
+            <stop offset="1" stopColor="#cfd9e0" stopOpacity=".9"/>
+          </linearGradient>
+        </defs>
+        {/* tick marks */}
+        {[80,100,120,140,160,180,200].map(y=>(
+          <line key={y} x1="150" y1={y} x2="158" y2={y} stroke="#94a0aa" strokeWidth="1"/>
+        ))}
+        {/* plunger top */}
+        <rect x="146" y="40" width="36" height="8" rx="2" fill="#5b6470"/>
+        <rect x="160" y="20" width="8" height="22" fill="#5b6470"/>
+        <circle cx="164" cy="18" r="6" fill="#5b6470"/>
+        {/* needle */}
+        <rect x="161" y="220" width="6" height="22" fill="#bfc6cd"/>
+        <line x1="164" y1="242" x2="164" y2="270" stroke="#1a1a1a" strokeWidth="1.6"/>
+        {/* shadow */}
+        <ellipse cx="160" cy="380" rx="100" ry="10" fill="#000" opacity=".08"/>
+      </svg>
+    );
+
+    /* SHIELD / LOCK icons */
+    const ShieldIcon = () => (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5l-8-3Z"/>
+        <path d="m9 12 2 2 4-4"/>
+      </svg>
+    );
+    const LockIcon = () => (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <rect x="4" y="11" width="16" height="10" rx="2"/>
+        <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+      </svg>
+    );
+    const ArrowIcon = () => (
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>
+      </svg>
+    );
+    const CheckIcon = () => (
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="m5 12 5 5L20 7"/>
+      </svg>
+    );
+
+    /* US states */
+    const STATES = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming','District of Columbia'];
+
+    /* ---------- SURVEY ---------- */
+    function Survey() {
+      const [data, setData] = useState({
+        diagnosed:'', tookDepo:'', duration:'', attorney:'', state:'',
+        first:'', last:'', email:'', zip:'', phone:'', notes:'', consent:false,
+      });
+      const [errors, setErrors] = useState({});
+      const [submitted, setSubmitted] = useState(false);
+      const [refNum, setRefNum] = useState('');
+
+      const set = (k,v) => setData(d => ({...d,[k]:v}));
+
+      // simple progress: count completed required fields
+      const required = ['diagnosed','tookDepo','duration','attorney','state','first','last','email','zip','phone','consent'];
+      const filled = required.filter(k => k==='consent' ? data.consent : (data[k] && String(data[k]).trim().length > 0)).length;
+      const pct = Math.round((filled / required.length) * 100);
+
+      const validate = () => {
+        const e = {};
+        if (!data.diagnosed) e.diagnosed = 'Please select an option';
+        if (!data.tookDepo) e.tookDepo = 'Please select an option';
+        if (!data.duration) e.duration = 'Please select an option';
+        if (!data.attorney) e.attorney = 'Please select an option';
+        if (!data.state) e.state = 'Please select your state';
+        if (!data.first.trim()) e.first = 'Required';
+        if (!data.last.trim()) e.last = 'Required';
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email.trim())) e.email = 'Enter a valid email';
+        if (!/^\d{5}(-\d{4})?$/.test(data.zip.trim())) e.zip = 'Enter a valid ZIP';
+        const phoneDigits = data.phone.replace(/\D/g,'');
+        if (phoneDigits.length < 10) e.phone = 'Enter a 10-digit phone';
+        if (!data.consent) e.consent = 'Please agree to continue';
+        return e;
+      };
+
+      const formatPhone = (v) => {
+        const d = v.replace(/\D/g,'').slice(0,10);
+        if (d.length <= 3) return d;
+        if (d.length <= 6) return `(${d.slice(0,3)}) ${d.slice(3)}`;
+        return `(${d.slice(0,3)}) ${d.slice(3,6)}-${d.slice(6)}`;
+      };
+
+      const onSubmit = (e) => {
+        e.preventDefault();
+        const errs = validate();
+        setErrors(errs);
+        if (Object.keys(errs).length === 0) {
+          const ref = 'HM-' + Math.random().toString(36).slice(2,7).toUpperCase() + '-' + new Date().getFullYear();
+          setRefNum(ref);
+          setSubmitted(true);
+          // scroll into view
+          window.scrollTo({top:0, behavior:'smooth'});
+        } else {
+          // focus first error
+          const first = Object.keys(errs)[0];
+          const el = document.querySelector(`[name="${first}"]`);
+          if (el) el.focus();
+        }
+      };
+
+      if (submitted) {
+        return (
+          <div className="form-card">
+            <div className="form-head">
+              <h2>Thank You</h2>
+              <p style={{textDecoration:'none'}}>We've received your information</p>
+            </div>
+            <div className="form-body confirm">
+              <div className="check"><CheckIcon /></div>
+              <h3>Your case review request was submitted</h3>
+              <p>A member of our intake team will contact you within 1 business day.</p>
+              <p>Reference number:</p>
+              <span className="ref">{refNum}</span>
+            </div>
+          </div>
+        );
+      }
+
+      return (
+        <form className="form-card" onSubmit={onSubmit} noValidate>
+          <div className="form-head">
+            <h2>Find Out If You Qualify</h2>
+            <p>SIGNIFICANT Compensation May Be Available</p>
+          </div>
+          <div className="form-body">
+            <div className="progress" aria-hidden="true">
+              {[0,1,2,3,4].map(i => <span key={i} className={pct >= (i+1)*20 ? 'on' : ''} />)}
+            </div>
+
+            <div className={`field ${errors.diagnosed?'err':''}`}>
+              <label>Have you or a loved one received a diagnosis for any of the following conditions within the past 40 years?</label>
+              <select name="diagnosed" value={data.diagnosed} onChange={e=>set('diagnosed',e.target.value)}>
+                <option value="">— Select one —</option>
+                <option>Intracranial meningioma (brain)</option>
+                <option>Spinal meningioma</option>
+                <option>Pseudotumor cerebri</option>
+                <option>Other brain tumor</option>
+                <option>None of the above</option>
+              </select>
+              {errors.diagnosed && <div className="err-msg">{errors.diagnosed}</div>}
+            </div>
+
+            <div className={`field ${errors.tookDepo?'err':''}`}>
+              <label>Did you or a loved one receive Depo-Provera medication on a regular basis?</label>
+              <select name="tookDepo" value={data.tookDepo} onChange={e=>set('tookDepo',e.target.value)}>
+                <option value="">— Select one —</option>
+                <option>Yes</option>
+                <option>No</option>
+                <option>Not sure</option>
+              </select>
+              {errors.tookDepo && <div className="err-msg">{errors.tookDepo}</div>}
+            </div>
+
+            <div className={`field ${errors.duration?'err':''}`}>
+              <label>Approximately how long did you or a loved one take Depo-Provera medication on a regular basis?</label>
+              <select name="duration" value={data.duration} onChange={e=>set('duration',e.target.value)}>
+                <option value="">— Select one —</option>
+                <option>Less than 1 year</option>
+                <option>1–2 years</option>
+                <option>2–5 years</option>
+                <option>5–10 years</option>
+                <option>More than 10 years</option>
+              </select>
+              {errors.duration && <div className="err-msg">{errors.duration}</div>}
+            </div>
+
+            <div className={`field ${errors.attorney?'err':''}`}>
+              <label>Have you retained an attorney?</label>
+              <select name="attorney" value={data.attorney} onChange={e=>set('attorney',e.target.value)}>
+                <option value="">— Select one —</option>
+                <option>No</option>
+                <option>Yes</option>
+              </select>
+              {errors.attorney && <div className="err-msg">{errors.attorney}</div>}
+            </div>
+
+            <div className={`field ${errors.state?'err':''}`}>
+              <label>In which U.S. state do you live?</label>
+              <select name="state" value={data.state} onChange={e=>set('state',e.target.value)}>
+                <option value="">— Select one —</option>
+                {STATES.map(s => <option key={s}>{s}</option>)}
+              </select>
+              {errors.state && <div className="err-msg">{errors.state}</div>}
+            </div>
+
+            <div className="row2">
+              <div className={`field ${errors.first?'err':''}`}>
+                <label>First Name</label>
+                <input name="first" value={data.first} onChange={e=>set('first',e.target.value)} autoComplete="given-name"/>
+                {errors.first && <div className="err-msg">{errors.first}</div>}
+              </div>
+              <div className={`field ${errors.last?'err':''}`}>
+                <label>Last Name</label>
+                <input name="last" value={data.last} onChange={e=>set('last',e.target.value)} autoComplete="family-name"/>
+                {errors.last && <div className="err-msg">{errors.last}</div>}
+              </div>
+            </div>
+
+            <div className={`field ${errors.email?'err':''}`}>
+              <label>Email</label>
+              <input name="email" type="email" value={data.email} onChange={e=>set('email',e.target.value)} autoComplete="email"/>
+              {errors.email && <div className="err-msg">{errors.email}</div>}
+            </div>
+
+            <div className={`field ${errors.zip?'err':''}`}>
+              <label>Zipcode</label>
+              <input name="zip" value={data.zip} onChange={e=>set('zip',e.target.value.replace(/[^\d-]/g,'').slice(0,10))} autoComplete="postal-code" inputMode="numeric"/>
+              {errors.zip && <div className="err-msg">{errors.zip}</div>}
+            </div>
+
+            <div className={`field ${errors.phone?'err':''}`}>
+              <label>Phone Number</label>
+              <input name="phone" value={data.phone} onChange={e=>set('phone',formatPhone(e.target.value))} autoComplete="tel" inputMode="tel" placeholder="(555) 123-4567"/>
+              {errors.phone && <div className="err-msg">{errors.phone}</div>}
+            </div>
+
+            <div className="field">
+              <label>Briefly describe what happened (optional)</label>
+              <textarea name="notes" rows="3" value={data.notes} onChange={e=>set('notes',e.target.value)} placeholder="Message"/>
+            </div>
+
+            <button type="submit" className="submit">Do I Qualify <ArrowIcon/></button>
+
+            <div className="trust-row">
+              <span className="trust-pill"><ShieldIcon/> Confidential Review</span>
+              <span className="trust-pill"><LockIcon/> Secure Site</span>
+            </div>
+            <p className="consent">
+              By clicking "Do I Qualify" and submitting my request, I confirm that I have read and agree to the <a href="#">Privacy Policy</a> and <a href="#">Terms and Conditions</a>.
+              {errors.consent && <span style={{color:'var(--red)',display:'block',marginTop:4,fontWeight:600}}>{errors.consent}</span>}
+            </p>
+            <label style={{display:'flex',gap:8,alignItems:'flex-start',marginTop:8,fontSize:11,color:'#5b6470',lineHeight:1.4,cursor:'pointer'}}>
+              <input type="checkbox" name="consent" checked={data.consent} onChange={e=>set('consent',e.target.checked)} style={{marginTop:2}}/>
+              <span>I agree to be contacted by Halden &amp; Marsh, LLP and its co-counsel regarding my potential claim.</span>
+            </label>
+          </div>
+        </form>
+      );
+    }
+
+    /* ---------- STICKY CTA ---------- */
+    function StickyCTA() {
+      const [show, setShow] = useState(false);
+      useEffect(() => {
+        const onScroll = () => setShow(window.scrollY > 500);
+        window.addEventListener('scroll', onScroll, {passive:true});
+        return () => window.removeEventListener('scroll', onScroll);
+      }, []);
+      return (
+        <div className={`sticky ${show?'show':''}`}>
+          <div className="msg"><em>Time-sensitive:</em> See if you qualify for compensation</div>
+          <button onClick={() => window.scrollTo({top:0, behavior:'smooth'})}>
+            Take the survey <ArrowIcon/>
+          </button>
+        </div>
+      );
+    }
+
+    /* ---------- PAGE ---------- */
+    function Page() {
+      return (
+        <>
+          <header className="topbar">
+            <div className="brand">
+              <BrandMark/>
+              <div className="brand-name">
+                <strong>Meningioma</strong><br/>
+                <span>FAQ and Resources</span>
+              </div>
+            </div>
+            <div className="urgency">Time Is Limited To File!</div>
+          </header>
+
+          <section className="hero">
+            <div className="hero-grid">
+              <div className="left-col">
+                <div className="pitch">
+                  <h1>
+                    Diagnosed With a <span style={{color:'#0f1622'}}>Brain Meningioma?</span><br/>
+                    Complete This <span style={{color:'#0f1622'}}>Free Survey</span> To Find Out<br/>
+                    If You May Qualify For <span style={{color:'#0f1622'}}>Compensation</span>
+                  </h1>
+                  <p className="lede">100% Confidential and Private</p>
+                  <p className="payout"><em>*Estimated payouts for eligible individuals may range from </em><strong>$100,000 to $500,000.</strong>*</p>
+                  <p className="footnote">
+                    *The mentioned amount is only an estimate of potential settlement. Actual compensation may be greater than the stated amount, less, or even zero. Source: industry reporting on Depo-Provera-related settlement amounts.
+                  </p>
+                </div>
+
+                <div className="info-block">
+                  <h3>Women who developed health issues after using Depo-Provera may qualify for <span className="hl">SIGNIFICANT compensation!</span></h3>
+                  <div className="info-photo"><PatientPhoto/></div>
+                  <p>Studies have linked Depo-Provera use to an increased risk of brain tumors and other serious health conditions, impacting countless women globally.</p>
+                  <p>Pfizer, the manufacturer of Depo-Provera, allegedly failed to adequately disclose these health risks, putting many at serious risk.</p>
+                </div>
+              </div>
+              <Survey/>
+            </div>
+          </section>
+
+          <section className="press" aria-label="As seen on">
+            <div className="label">As Seen On:</div>
+            <div className="logos">
+              <div className="logo serif">Forbes</div>
+              <div className="logo"><span className="dot"/>REUTERS</div>
+              <div className="logo">Bloomberg<br/><span style={{fontWeight:800}}>Law</span></div>
+            </div>
+          </section>
+
+          <section className="depo">
+            <div className="depo-grid">
+              <h2>The Depo-Provera Health Risk Connection</h2>
+              <div>
+                <p>Depo-Provera is an injectable contraceptive containing medroxyprogesterone, a synthetic progestin. It is administered every three months to suppress ovulation.</p>
+                <p>Recent studies have found that long-term use of Depo-Provera can significantly increase the risk of a brain tumor called intracranial meningioma.</p>
+                <p>The medication has also been linked to pseudotumor cerebri, a condition where symptoms mimic those of a brain tumor due to increased intracranial pressure.</p>
+                <p>If you used Depo-Provera regularly and were later diagnosed with a meningioma or related condition, you may have grounds for a legal claim against the manufacturer.</p>
+              </div>
+              <div className="depo-img"><VialPhoto/></div>
+            </div>
+          </section>
+
+          <section className="mint">
+            <h3>Find Out Now If You Qualify For a<br/><strong>Depo-Provera Case</strong></h3>
+            <a href="#" className="cta" onClick={(e)=>{e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});}}>
+              See if I Qualify for Compensation <ArrowIcon/>
+            </a>
+          </section>
+
+          <footer>
+            <div className="footer-inner">
+              <div className="head">This is a legal advertisement</div>
+              <p><strong>Attorney advertising disclaimer:</strong> The information you obtain at this site is not, nor is it intended to be, legal advice. You should consult an attorney for advice regarding your individual situation. We invite you to contact us and welcome your calls, letters and electronic mail. Contacting us does not create an attorney–client relationship. Please do not send any confidential information to us until such time as an attorney–client relationship has been established. Prior results do not guarantee a similar outcome.</p>
+              <div className="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms and Conditions</a>
+              </div>
+            </div>
+          </footer>
+
+          <StickyCTA/>
+        </>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<Page/>);
+  </script>
+</body>
+</html>
